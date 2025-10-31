@@ -41,7 +41,7 @@ Netlify reads from this subdirectory:
 - Publish directory: `.next`  
 - Plugin: `@netlify/plugin-nextjs`
 
-For contact form submissions, Netlify must detect the `data-netlify="true"` form on `/contact`.
+For outreach, the `/contact` page links to pre-filled email templates targeting the appropriate Islanders lead.
 
 ## GitHub Workflow
 

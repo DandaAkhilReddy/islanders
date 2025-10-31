@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { contactChannels } from "@/data/site";
 
 export const metadata = {
@@ -17,9 +18,9 @@ export default function ContactPage() {
           Coordinate the next Islanders milestone.
         </h1>
         <p className="max-w-3xl text-base text-slate-200">
-          Netlify hosting keeps the site always-on; GitHub maintains the living
-          playbook. Use the channels below or drop a note via the Netlify-ready
-          form to coordinate fixtures, partnerships, and press coverage.
+          Choose the channel that best matches your request and we&apos;ll route
+          it straight to the right leader. Prefer a direct call? Drop an email
+          from your client and we&apos;ll respond within one business day.
         </p>
       </section>
 
@@ -47,49 +48,39 @@ export default function ContactPage() {
       </section>
 
       <section className="rounded-3xl border border-white/10 bg-slate-950/70 p-8">
-        <form
-          name="islanders-contact"
-          method="POST"
-          data-netlify="true"
-          className="space-y-6"
-        >
-          <input type="hidden" name="form-name" value="islanders-contact" />
-          <div className="grid gap-6 md:grid-cols-2">
-            <label className="flex flex-col gap-2 text-sm text-slate-200">
-              Full Name
-              <input
-                type="text"
-                name="name"
-                required
-                className="rounded-xl border border-white/10 bg-slate-900/80 px-4 py-3 text-sm text-white outline-none transition focus:border-amber-300"
-              />
-            </label>
-            <label className="flex flex-col gap-2 text-sm text-slate-200">
-              Email
-              <input
-                type="email"
-                name="email"
-                required
-                className="rounded-xl border border-white/10 bg-slate-900/80 px-4 py-3 text-sm text-white outline-none transition focus:border-amber-300"
-              />
-            </label>
+        <div className="space-y-4">
+          <h2 className="text-xl font-semibold text-white">
+            Prefer a message template?
+          </h2>
+          <p className="text-sm text-slate-300">
+            Use your email client with one of the quick-start drafts below. Each
+            link opens a pre-filled message so you can focus on the details.
+          </p>
+          <div className="grid gap-3 md:grid-cols-2">
+            <Link
+              className="rounded-2xl border border-white/10 bg-slate-900/80 px-5 py-4 text-sm text-slate-200 transition hover:border-amber-300 hover:text-amber-200"
+              href="mailto:leadership@islanderscricket.com?subject=Islanders%20Fixture%20Coordination&body=Hello%20Islanders%20Leadership%2C%0D%0A%0D%0AWe%27d%20like%20to%20coordinate..."
+            >
+              Leadership Coordination Template
+            </Link>
+            <Link
+              className="rounded-2xl border border-white/10 bg-slate-900/80 px-5 py-4 text-sm text-slate-200 transition hover:border-amber-300 hover:text-amber-200"
+              href="mailto:analytics@islanderscricket.com?subject=Analytics%20Request&body=Hello%20Analytics%20Team%2C%0D%0A%0D%0APlease%20share..."
+            >
+              Analytics Insight Template
+            </Link>
           </div>
-          <label className="flex flex-col gap-2 text-sm text-slate-200">
-            Message
-            <textarea
-              name="message"
-              required
-              rows={4}
-              className="rounded-xl border border-white/10 bg-slate-900/80 px-4 py-3 text-sm text-white outline-none transition focus:border-amber-300"
-            />
-          </label>
-          <button
-            type="submit"
-            className="inline-flex items-center justify-center rounded-full bg-amber-300 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-amber-200"
-          >
-            Send Message
-          </button>
-        </form>
+          <p className="text-xs text-slate-400">
+            Need another template? Ping{" "}
+            <a
+              href="mailto:mentor@islanderscricket.com"
+              className="font-semibold text-sky-300 transition hover:text-sky-200"
+            >
+              mentor@islanderscricket.com
+            </a>{" "}
+            and we&apos;ll tailor one for you.
+          </p>
+        </div>
       </section>
     </div>
   );

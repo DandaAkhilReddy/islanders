@@ -21,7 +21,7 @@ Open `http://localhost:3000` to browse the site. Use `npm run build` to generate
 - **Framework**: Next.js 16 (App Router) + React 19 + Tailwind CSS v4.  
 - **Design System**: Islanders blues with gold accents, glass panels, responsive layouts.  
 - **Assets**: Executive summary, photo dashboards, season timeline, and architecture diagrams preloaded in `web/public/media/`.  
-- **Forms**: `/contact` ships with a Netlify-ready form (`data-netlify="true"`).  
+- **Outreach**: `/contact` provides direct email templates for leadership, partnerships, and analytics requests.  
 - **Quality Gates**: ESLint 9 + TypeScript 5 (`npm run lint`).  
 - **Routes**: Home, Achievements, Leadership, Analytics, Gallery, Contact (all statically prerendered).
 
