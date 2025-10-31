@@ -1,0 +1,132 @@
+# Configuration Template
+# Copy these settings to the top of cricket_stats_analyzer.py
+
+# =============================================================================
+# RUNTIME VARIABLES - EDIT THESE BEFORE RUNNING
+# =============================================================================
+
+# INPUT FILES
+STATS_CSV_PATH = "stats.csv"              # Path to your cricket statistics CSV
+IMAGES_DIR = ""                            # Path to photos directory (leave empty to skip)
+OUTPUT_DIR = "./outputs"                   # Where to save all generated files
+
+# PLAYER WHITELIST - Only these players will be analyzed
+# Add or remove names as needed. Names are fuzzy-matched, so small typos are OK.
+PLAYERS_WHITELIST = [
+    "Dr. Vishnu Reddy",
+    "Akhil Reddy Danda",
+    "Nithesh Y",
+    "Rajshekhar Reddy",
+    "Faizan Mohammad",
+    "Dinesh Reddy Kandari",
+    "Shashvat Patel",
+    "Karthik 01",
+    "Harshith Sai",
+    "Pushkar P",
+    # Add more players below:
+    # "New Player Name",
+    # "Another Player",
+]
+
+# SPOTLIGHT PLAYERS - Get detailed reports for these players
+# Must be present in PLAYERS_WHITELIST above
+SPOTLIGHT_PLAYERS = [
+    "Dr. Vishnu Reddy",
+    "Akhil Reddy Danda"
+]
+
+# =============================================================================
+# THRESHOLDS - Adjust these based on your data volume
+# =============================================================================
+
+# Batting thresholds
+MIN_INNINGS_FOR_BAT_AVG = 3    # Minimum innings to qualify for batting average rankings
+MIN_BALLS_FOR_SR = 50           # Minimum balls faced to qualify for strike rate rankings
+
+# Bowling thresholds
+MIN_OVERS_FOR_ECON = 10         # Minimum overs bowled to qualify for economy rate rankings
+MIN_WICKETS_FOR_BOWL_AVG = 5    # Minimum wickets to qualify for bowling average rankings
+
+# Matching threshold
+FUZZY_MATCH_THRESHOLD = 90      # 0-100, how strict name matching should be (90 = 90% similar)
+
+# Random seed for reproducibility
+SEED = 7
+
+# =============================================================================
+# NOTES ON CONFIGURATION
+# =============================================================================
+
+# CSV COLUMNS:
+# Required: player (or name/Player/Name)
+# Optional: matches, innings, runs, balls, fours, sixes, highest, not_outs,
+#           wickets, overs, maidens, runs_conceded, dots, catches, stumpings,
+#           run_outs, date, opponent, venue
+# Missing columns will be handled gracefully with warnings.
+
+# PLAYER NAMES:
+# - Names are normalized to Title Case
+# - Multiple spaces collapsed to single space
+# - Fuzzy matching helps with minor typos
+# - Add exact names from your CSV to whitelist for best results
+
+# THRESHOLDS:
+# - If too few players qualify, the script will relax thresholds automatically
+# - Lower thresholds = more players in Top-5, but may include players with limited data
+# - Higher thresholds = more selective, but may result in fewer than 5 players
+
+# SPOTLIGHT PLAYERS:
+# - These players get detailed cards even if not in Top-5
+# - Shows their rank in each metric
+# - Displays margin to #5 if not in Top-5
+# - Creates sparkline charts if date data available
+
+# PHOTO ANALYSIS:
+# - Requires pytesseract and Tesseract OCR installed
+# - Detects player names in filenames and photo content (OCR)
+# - Generates "most photographed players" list
+# - Creates contact sheet of photos with spotlight players
+# - Leave IMAGES_DIR empty to skip this feature
+
+# =============================================================================
+# EXAMPLE CONFIGURATIONS
+# =============================================================================
+
+# SMALL DATASET (< 50 matches):
+# MIN_INNINGS_FOR_BAT_AVG = 1
+# MIN_BALLS_FOR_SR = 20
+# MIN_OVERS_FOR_ECON = 5
+# MIN_WICKETS_FOR_BOWL_AVG = 2
+
+# MEDIUM DATASET (50-200 matches):
+# MIN_INNINGS_FOR_BAT_AVG = 3
+# MIN_BALLS_FOR_SR = 50
+# MIN_OVERS_FOR_ECON = 10
+# MIN_WICKETS_FOR_BOWL_AVG = 5
+
+# LARGE DATASET (200+ matches):
+# MIN_INNINGS_FOR_BAT_AVG = 5
+# MIN_BALLS_FOR_SR = 100
+# MIN_OVERS_FOR_ECON = 20
+# MIN_WICKETS_FOR_BOWL_AVG = 10
+
+# STRICT NAME MATCHING (only exact or near-exact matches):
+# FUZZY_MATCH_THRESHOLD = 95
+
+# LENIENT NAME MATCHING (handles more typos):
+# FUZZY_MATCH_THRESHOLD = 80
+
+# =============================================================================
+# COMMON TYPO FIXES
+# =============================================================================
+
+# If you have common typos in your data, add them to the apply_typo_fixes()
+# function in the script. For example:
+# 
+# typo_map = {
+#     "Vishnu": "Vishnu",        # Wrong -> Correct
+#     "Akil": "Akhil",           # Common misspelling
+#     "Mohammad": "Mohammed",     # Alternate spelling
+# }
+
+# =============================================================================

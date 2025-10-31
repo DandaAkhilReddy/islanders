@@ -1,0 +1,113 @@
+{
+  "generatedAt": "October 30, 2025 at 09:56 PM",
+  "metrics": {
+    "totalPhotos": 42
+  },
+  "achievements": [
+    {
+      "title": "CCPL (Corpus Christi Premier League)",
+      "bullets": {
+        "Status": "Runner-Up",
+        "Achievement": "Strong performance leading to finals",
+        "Team Spirit": "Exceptional camaraderie and dedication"
+      }
+    },
+    {
+      "title": "San Antonio League",
+      "bullets": {
+        "Status": "Leading Position",
+        "Performance": "Top of the league standings",
+        "Momentum": "Strong winning streak"
+      }
+    }
+  ],
+  "photoDistribution": [
+    {
+      "category": "Team Celebration",
+      "count": 14
+    },
+    {
+      "category": "Individual Awards",
+      "count": 12
+    },
+    {
+      "category": "Action Shots",
+      "count": 16
+    }
+  ],
+  "keyPersonnel": [
+    {
+      "role": "Captain",
+      "name": "Akhil Reddy Danda",
+      "descriptor": "Red Cap",
+      "bullets": [
+        "Team Captain and Leader",
+        "Outstanding performance across all formats",
+        "Man of the Match awards recipient"
+      ]
+    },
+    {
+      "role": "Mentor & Leadership",
+      "name": "Dr. Vishnu Reddy",
+      "descriptor": "Principal",
+      "bullets": [
+        "Team mentor and guide",
+        "Prize distribution ceremonies",
+        "Strategic leadership"
+      ]
+    }
+  ],
+  "specialMoments": [
+    {
+      "title": "Championship Trophy Ceremonies",
+      "bullets": [
+        "CCPL Runner-Up trophy presentation",
+        "Team celebration with trophy",
+        "Individual player awards"
+      ]
+    },
+    {
+      "title": "Match Action",
+      "bullets": [
+        "Bowling performances",
+        "Batting milestones (centuries)",
+        "Fielding excellence"
+      ]
+    },
+    {
+      "title": "Team Bonding",
+      "bullets": [
+        "Post-match celebrations",
+        "Team parties at homes",
+        "Restaurant gatherings",
+        "Pitch inspection walks"
+      ]
+    },
+    {
+      "title": "Distinguished Guests",
+      "bullets": [
+        "Meeting with Zimbabwe Cricket Captain (Retired, Age 39)",
+        "International cricket connections",
+        "Professional networking"
+      ]
+    }
+  ],
+  "tournamentPerformance": [
+    {
+      "title": "CCPL Tournament",
+      "bullets": [
+        "Consistent performance throughout the season",
+        "Strong team cohesion",
+        "Multiple Man of the Match awards"
+      ]
+    },
+    {
+      "title": "San Antonio League (Current)",
+      "bullets": [
+        "Leading the points table",
+        "Unbeaten run in recent matches",
+        "Top position in league standings"
+      ]
+    }
+  ]
+}

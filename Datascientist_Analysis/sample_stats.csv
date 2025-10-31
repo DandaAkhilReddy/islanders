@@ -1,0 +1,13 @@
+player,matches,innings,runs,balls,fours,sixes,highest,not_outs,wickets,overs,maidens,runs_conceded,dots,catches,stumpings,run_outs,date,opponent,venue
+Dr. Vishnu Reddy,5,5,245,180,25,8,89,1,12,18,2,145,85,3,0,1,2024-01-15,Team A,Ground 1
+Akhil Reddy Danda,5,5,198,160,20,5,75,0,8,15,1,120,70,2,0,0,2024-01-15,Team A,Ground 1
+Nithesh Y,4,4,156,145,15,4,62,1,5,12,0,95,55,4,0,2,2024-01-15,Team A,Ground 1
+Rajshekhar Reddy,5,5,210,175,22,7,82,0,10,16,1,130,75,1,0,1,2024-01-22,Team B,Ground 2
+Faizan Mohammad,4,4,178,155,18,6,68,1,7,14,0,110,65,3,1,0,2024-01-22,Team B,Ground 2
+Dinesh Reddy Kandari,3,3,145,120,14,5,58,0,9,13,1,105,60,2,0,1,2024-01-22,Team B,Ground 2
+Shashvat Patel,5,5,192,168,19,6,71,1,6,15,0,125,70,5,0,0,2024-01-29,Team C,Ground 1
+Karthik 01,4,4,167,150,16,5,65,0,11,17,2,135,80,2,0,1,2024-01-29,Team C,Ground 1
+Harshith Sai,3,3,134,115,13,4,54,1,4,11,0,90,50,3,0,0,2024-01-29,Team C,Ground 1
+Pushkar P,5,5,203,182,21,7,79,0,8,14,1,115,68,4,0,2,2024-02-05,Team D,Ground 2
+Dr. Vishnu Reddy,1,1,52,38,5,2,52,0,3,6,0,42,28,1,0,0,2024-02-05,Team D,Ground 2
+Akhil Reddy Danda,1,1,45,35,4,1,45,0,2,5,0,35,20,0,0,1,2024-02-05,Team D,Ground 2

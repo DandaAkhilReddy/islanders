@@ -1,0 +1,23 @@
+# Global ignores for Islanders Cricket repository
+.DS_Store
+Thumbs.db
+*.log
+
+# Python cache (prompt/analytics scripts)
+__pycache__/
+*.pyc
+
+# Local IDE/tooling settings
+.vscode/
+.idea/
+.claude/
+.continue/
+
+# Build artifacts outside the web app
+dist/
+build/
+
+# Misc archives
+*.zip
+*.tar
+*.tar.gz
