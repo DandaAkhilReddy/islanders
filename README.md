@@ -27,7 +27,7 @@ Open `http://localhost:3000` to browse the site. Use `npm run build` to generate
 
 ## Analytics Data Sync
 
-The site now consumes real data from `masterprompt_withphoto analysis/executive_summary.md`. Whenever the analytics engine regenerates that markdown, update the Next.js data layer with:
+The site consumes data from `masterprompt_withphoto analysis/executive_summary.md`. Whenever the analytics engine regenerates that markdown, update the Next.js data layer with:
 
 ```bash
 node scripts/sync-analytics.js
@@ -37,7 +37,7 @@ This command writes `web/src/data/generated/executiveSummary.json`. Re-run `npm 
 
 ## Netlify Deployment
 
-`netlify.toml` is configured for one-click deploys:
+`netlify.toml` is configured for one-click deploys, and once the repo is connected every push to `main` automatically triggers a fresh build.
 
 ```toml
 [build]
@@ -51,11 +51,22 @@ This command writes `web/src/data/generated/executiveSummary.json`. Re-run `npm 
 
 Steps:
 
-1. Log in to Netlify and choose “Add new site → Import from Git”.  
+1. Log in to Netlify and choose "Add new site -> Import from Git".  
 2. Select `DandaAkhilReddy/islanders`.  
 3. Confirm the build command (`npm run build`) and publish directory (`.next`).  
 4. Deploy. Netlify provides preview builds for pull requests automatically.  
 5. (Optional) Create build hooks to trigger deployments after new analytics runs.
+
+### GitHub Actions guardrail
+
+The repository includes `.github/workflows/web-ci.yml`, which runs on every push/PR that touches the site or analytics summary. It executes:
+
+1. `npm ci`
+2. `node ../scripts/sync-analytics.js`
+3. `npm run lint`
+4. `npm run build`
+
+Keep the workflow green so Netlify never receives a broken build.
 
 ## GitHub Integration
 

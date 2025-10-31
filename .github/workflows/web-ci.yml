@@ -1,0 +1,48 @@
+name: Web CI
+
+on:
+  pull_request:
+    paths:
+      - "web/**"
+      - "scripts/sync-analytics.js"
+      - "masterprompt_withphoto analysis/executive_summary.md"
+      - ".github/workflows/web-ci.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "web/**"
+      - "scripts/sync-analytics.js"
+      - "masterprompt_withphoto analysis/executive_summary.md"
+      - ".github/workflows/web-ci.yml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+          cache-dependency-path: web/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync analytics summary
+        run: |
+          node ../scripts/sync-analytics.js
+        shell: bash
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
