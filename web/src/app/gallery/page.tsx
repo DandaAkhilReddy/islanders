@@ -21,6 +21,85 @@ const downloadables = [
   },
 ];
 
+const corpusChristiShots = [
+  {
+    src: "/media/events/ccpl-2025-team.jpeg",
+    alt: "Islanders CCPL 2025 squad with Dr. Vishnu Reddy holding the runner-up trophy",
+    caption: "CCPL 2025 Finals Night",
+    description:
+      "Dr. Vishnu V. Reddy with Akhil Reddy Danda and the entire Islanders squad after securing the Corpus Christi Premier League runner-up finish.",
+  },
+  {
+    src: "/media/events/ccpl-trophy-ceremony.jpeg",
+    alt: "Islanders cricketers lifting the Corpus Christi Premier League trophy",
+    caption: "Trophy Presentation",
+    description:
+      "Akhil Reddy Danda and Faizan Mohammad hoist the CCPL silverware with the squad rallying behind them.",
+  },
+  {
+    src: "/media/events/runnerup-presentation.jpeg",
+    alt: "Akhil Reddy Danda receiving the runner-up medal from Dr. Vishnu Reddy",
+    caption: "Medal Hand-Off",
+    description:
+      "Mentor Dr. Vishnu Reddy honours captain Akhil with the CCPL medal—cementing the leadership bond.",
+  },
+  {
+    src: "/media/events/century-celebration.jpeg",
+    alt: "Islanders celebrating a century with teammates embracing on the field",
+    caption: "Century Roar",
+    description:
+      "Harshith Sai and Faizan embrace after the century milestone that swung CCPL momentum.",
+  },
+];
+
+const sanAntonioShots = [
+  {
+    src: "/media/events/hero-san-antonio-team.jpeg",
+    alt: "Islanders squad celebrating in downtown San Antonio at night",
+    caption: "Downtown San Antonio Statement",
+    description:
+      "Full Islanders core with Veena akka and Niharika akka celebrating atop the San Antonio standings.",
+  },
+  {
+    src: "/media/events/team-gathering-san-antonio.jpeg",
+    alt: "Team huddle in San Antonio league gear before the match",
+    caption: "League Leaders Huddle",
+    description:
+      "Pre-match team talk before going 5-0 in the San Antonio League charge.",
+  },
+  {
+    src: "/media/events/pitch-walkthrough.jpeg",
+    alt: "Akhil Reddy Danda and Dr. Vishnu Reddy walking the pitch before a game",
+    caption: "Pitch Walkthrough",
+    description:
+      "Akhil and Dr. Vishnu inspect the strip minutes before tossing up in San Antonio.",
+  },
+];
+
+const communityShots = [
+  {
+    src: "/media/events/elton-chigumbura-akhil.jpeg",
+    alt: "Akhil Reddy Danda with Elton Chigumbura during mentorship session",
+    caption: "Elton Chigumbura Mentorship",
+    description:
+      "Former Zimbabwe captain Elton Chigumbura strategising batting drills with Akhil.",
+  },
+  {
+    src: "/media/events/elton-chigumbura-sampath.jpeg",
+    alt: "Sampath Reddy receiving coaching tips from Elton Chigumbura",
+    caption: "Elite Coaching Clinics",
+    description:
+      "Sampath Reddy fine-tuning spin control during the Islanders elite coaching camp.",
+  },
+  {
+    src: "/media/sponsors/sponsor-recognition.png",
+    alt: "Sponsor recognition board highlighting Islanders supporters",
+    caption: "Sponsor Gratitude Wall",
+    description:
+      "Veena akka curates a travelling wall naming every sponsor, donor, and family that powers the Islanders.",
+  },
+];
+
 export default function GalleryPage() {
   return (
     <div className="mx-auto max-w-5xl space-y-16 px-6 pb-24 pt-16">
@@ -72,6 +151,132 @@ export default function GalleryPage() {
               ))}
             </ul>
           </div>
+        </div>
+      </section>
+
+      <section
+        className="space-y-6 rounded-3xl border border-white/10 bg-slate-950/70 p-8"
+        id="corpus-christi"
+      >
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-amber-200">
+            Corpus Christi League
+          </p>
+          <h2 className="text-3xl font-semibold text-white">
+            Finals journey and silverware celebrations.
+          </h2>
+          <p className="mt-3 text-sm text-slate-300">
+            Trophy night stories featuring the CCPL runner-up squad, medal
+            ceremonies, and milestone centuries.
+          </p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {corpusChristiShots.map((shot) => (
+            <figure
+              key={shot.src}
+              className="space-y-3 rounded-3xl border border-white/10 bg-slate-900/70 p-4"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10">
+                <Image
+                  src={shot.src}
+                  alt={shot.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption>
+                <p className="text-sm font-semibold text-white">
+                  {shot.caption}
+                </p>
+                <p className="text-xs text-slate-300">{shot.description}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <section
+        className="space-y-6 rounded-3xl border border-white/10 bg-slate-950/70 p-8"
+        id="san-antonio"
+      >
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-blue-200">
+            San Antonio League
+          </p>
+          <h2 className="text-3xl font-semibold text-white">
+            Undefeated streaks and cityscape celebrations.
+          </h2>
+          <p className="mt-3 text-sm text-slate-300">
+            Veena akka ensures every matchday is powered with transport and
+            hospitality while the squad keeps the win column climbing.
+          </p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {sanAntonioShots.map((shot) => (
+            <figure
+              key={shot.src}
+              className="space-y-3 rounded-3xl border border-white/10 bg-slate-900/70 p-4"
+            >
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10">
+                <Image
+                  src={shot.src}
+                  alt={shot.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption>
+                <p className="text-sm font-semibold text-white">
+                  {shot.caption}
+                </p>
+                <p className="text-xs text-slate-300">{shot.description}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <section
+        className="space-y-6 rounded-3xl border border-white/10 bg-slate-950/70 p-8"
+        id="community"
+      >
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-sky-300">
+            Mentorship &amp; Community
+          </p>
+          <h2 className="text-3xl font-semibold text-white">
+            Coaching connections and sponsor gratitude.
+          </h2>
+          <p className="mt-3 text-sm text-slate-300">
+            International mentorship with Elton Chigumbura and the Islanders
+            gratitude wall honouring every sponsor and family.
+          </p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {communityShots.map((shot) => (
+            <figure
+              key={shot.src}
+              className="space-y-3 rounded-3xl border border-white/10 bg-slate-900/70 p-4"
+            >
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10">
+                <Image
+                  src={shot.src}
+                  alt={shot.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption>
+                <p className="text-sm font-semibold text-white">
+                  {shot.caption}
+                </p>
+                <p className="text-xs text-slate-300">{shot.description}</p>
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </section>
 

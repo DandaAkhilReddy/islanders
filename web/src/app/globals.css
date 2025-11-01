@@ -5,18 +5,22 @@
 }
 
 @theme inline {
-  --color-brand-primary: #2864ff;
-  --color-brand-gold: #f59e0b;
-  --color-surface-950: #020617;
-  --color-surface-900: #0f172a;
-  --color-surface-800: #1e293b;
+  --color-brand-midnight: #0a1d3b;
+  --color-brand-electric: #0072ce;
+  --color-brand-orange: #ff7a1c;
+  --color-surface-950: #030817;
+  --color-surface-900: #0f1f35;
+  --color-surface-800: #1b2d45;
   --font-sans: var(--font-geist-sans), "Inter", "Helvetica Neue", Arial, sans-serif;
   --font-mono: var(--font-geist-mono), "Menlo", "SFMono-Regular", Menlo, monospace;
+  --font-heading: var(--font-oswald), var(--font-sans);
 }
 
 body {
   font-family: var(--font-sans);
-  background: radial-gradient(circle at top, rgba(37, 99, 235, 0.12), transparent 60%),
+  background:
+    radial-gradient(circle at 10% 0%, rgba(0, 114, 206, 0.25), transparent 55%),
+    radial-gradient(circle at 90% 0%, rgba(255, 122, 28, 0.18), transparent 60%),
     var(--color-surface-950);
   color: rgb(226 232 240);
   min-height: 100vh;
@@ -27,8 +31,19 @@ a {
   text-decoration: none;
 }
 
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.04em;
+}
+
 .prose-gradient {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.85), rgba(56, 189, 248, 0.75));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 114, 206, 0.85),
+    rgba(255, 122, 28, 0.85)
+  );
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
@@ -36,6 +51,10 @@ a {
 
 .glass-panel {
   border: 1px solid rgba(148, 163, 184, 0.18);
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.65));
-  box-shadow: 0 24px 48px rgba(2, 6, 23, 0.55);
+  background: linear-gradient(
+    135deg,
+    rgba(10, 29, 59, 0.85),
+    rgba(10, 29, 59, 0.65)
+  );
+  box-shadow: 0 24px 48px rgba(2, 8, 23, 0.55);
 }

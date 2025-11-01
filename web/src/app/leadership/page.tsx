@@ -54,16 +54,17 @@ export default function LeadershipPage() {
             <div className="space-y-4">
               <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60">
                 <Image
-                  src="/media/system-architecture.png"
-                  alt="Islanders analytics architecture workflow"
+                  src={leader.image ?? "/media/events/elton-chigumbura-akhil.jpeg"}
+                  alt={`${leader.name} leading Islanders Cricket`}
                   width={900}
                   height={900}
                   className="h-full w-full object-cover"
                 />
               </div>
               <p className="text-xs text-slate-400">
-                Islanders&apos; leadership uses a modern analytics workflow to
-                align match plans, player development, and community stewardship.
+                Islanders leadership blends world-class hospitality, analytics,
+                and mentorship—often alongside international great Elton
+                Chigumbura—to keep the squad performing like a pro franchise.
               </p>
             </div>
           </article>
