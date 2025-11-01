@@ -510,3 +510,59 @@ h3 {
     transform: none;
   }
 }
+
+/* ============================================
+   MOBILE MENU ANIMATIONS
+   Responsive Navigation Design
+   ============================================ */
+
+/* Backdrop Fade In */
+.mobile-menu-backdrop {
+  animation: backdrop-fade-in 0.3s ease-out;
+}
+
+@keyframes backdrop-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Menu Panel Slide In */
+.mobile-menu-panel {
+  box-shadow: -10px 0 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Menu Link Hover */
+.mobile-menu-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile-menu-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: linear-gradient(to bottom, #10B981, #F59E0B);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu-link:hover::before {
+  transform: scaleY(1);
+}
+
+/* Reduced Motion for Mobile Menu */
+@media (prefers-reduced-motion: reduce) {
+  .mobile-menu-backdrop,
+  .mobile-menu-panel,
+  .mobile-menu-link::before {
+    animation: none !important;
+    transition: none !important;
+  }
+}

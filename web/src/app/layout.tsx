@@ -7,6 +7,7 @@ import {
   siteFooter,
   siteIdentity,
 } from "@/data/site";
+import MobileMenu from "@/components/MobileMenu";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -72,6 +73,8 @@ export default function RootLayout({
               >
                 Islanders Cricket
               </Link>
+
+              {/* Desktop Navigation */}
               <div className="hidden items-center gap-6 text-sm md:flex">
                 {navigationLinks.map((item) => (
                   <Link
@@ -83,17 +86,8 @@ export default function RootLayout({
                   </Link>
                 ))}
               </div>
-              <div className="flex max-w-xs items-center gap-3 overflow-x-auto text-xs font-semibold uppercase tracking-[0.3em] text-slate-300 md:hidden">
-                {navigationLinks.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="shrink-0 transition hover:text-amber-300"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
+
+              {/* Desktop CTA Button */}
               <div className="hidden md:block">
                 <Link
                   href={siteIdentity.cta.href}
@@ -102,6 +96,9 @@ export default function RootLayout({
                   {siteIdentity.cta.label}
                 </Link>
               </div>
+
+              {/* Mobile Menu Component */}
+              <MobileMenu />
             </nav>
           </header>
           <main>{children}</main>
