@@ -9,93 +9,122 @@ export const metadata = {
 
 export default function LeadershipPage() {
   return (
-    <div className="mx-auto max-w-5xl space-y-16 px-6 pb-24 pt-16">
-      <section className="space-y-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-amber-200">
-          Leadership Spotlight
-        </p>
-        <h1 className="text-4xl font-semibold text-white">
-          The visionaries steering Islanders Cricket.
-        </h1>
-        <p className="max-w-3xl text-base text-slate-200">
-          Islanders Cricket thrives on leaders who blend tactical nous with deep
-          community ties. Every milestone is anchored by intentional mentorship,
-          precise match-day calls, and a relentless pursuit of championship
-          standards.
-        </p>
-      </section>
-
-      <section className="space-y-8">
-        {leadership.map((leader) => (
-          <article
-            key={leader.name}
-            className="grid gap-8 rounded-3xl border border-white/10 bg-slate-950/70 p-8 lg:grid-cols-[1.1fr_0.9fr]"
-          >
-            <div className="space-y-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-400">
-                {leader.title}
-              </p>
-              <h2 className="text-2xl font-semibold text-white">{leader.name}</h2>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">
-                {leader.distinction}
-              </p>
-              <p className="text-sm text-slate-200">{leader.description}</p>
-              <ul className="mt-4 space-y-3 text-sm text-slate-300">
-                {leader.spotlight.map((item) => (
-                  <li
-                    key={item}
-                    className="rounded-2xl border border-white/5 bg-slate-900/80 px-4 py-3"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="space-y-4">
-              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60">
-                <Image
-                  src={leader.image ?? "/media/events/elton-chigumbura-akhil.jpeg"}
-                  alt={`${leader.name} leading Islanders Cricket`}
-                  width={900}
-                  height={900}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <p className="text-xs text-slate-400">
-                Islanders leadership blends world-class hospitality, analytics,
-                and mentorship—often alongside international great Elton
-                Chigumbura—to keep the squad performing like a pro franchise.
-              </p>
-            </div>
-          </article>
-        ))}
-      </section>
-
-      <section className="rounded-3xl border border-white/10 bg-slate-950/70 p-8">
-        <div className="space-y-6">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-300">
-              Coverage Through The Lens
+    <div className="min-h-screen bg-white">
+      {/* Page Header */}
+      <section className="bg-gradient-to-br from-emerald-50 to-white py-16">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="text-center">
+            <p className="text-sm font-semibold uppercase tracking-wider text-emerald-600">
+              Leadership Spotlight
             </p>
-            <h2 className="text-2xl font-semibold text-white">
-              Leadership presence across photo narratives.
-            </h2>
+            <h1 className="mt-4 text-4xl font-bold text-gray-900 sm:text-5xl">
+              Visionaries Steering Islanders Cricket
+            </h1>
+            <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-700">
+              Islanders Cricket thrives on leaders who blend tactical nous with
+              deep community ties. Every milestone is anchored by intentional
+              mentorship, precise match-day calls, and a relentless pursuit of
+              championship standards.
+            </p>
           </div>
-          <div className="grid gap-4 md:grid-cols-3">
-            {photoDistribution.map((item) => (
-              <div
-                key={item.category}
-                className="rounded-2xl border border-white/5 bg-slate-900/80 px-5 py-4"
-              >
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-amber-200">
-                  {item.category}
-                </p>
-                <p className="mt-3 text-3xl font-semibold text-white">
-                  {item.count}
-                </p>
-                <p className="mt-2 text-xs text-slate-300">{item.description}</p>
+        </div>
+      </section>
+
+      {/* Leadership Profiles */}
+      <section className="bg-gray-50 py-16">
+        <div className="mx-auto max-w-7xl space-y-12 px-6">
+          {leadership.map((leader) => (
+            <article
+              key={leader.name}
+              className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-lg"
+            >
+              <div className="grid gap-8 lg:grid-cols-[400px_1fr]">
+                {/* Leader Image */}
+                <div className="relative h-96 overflow-hidden bg-gradient-to-br from-emerald-50 to-gray-100 lg:h-auto">
+                  <Image
+                    src={
+                      leader.image ?? "/media/events/elton-chigumbura-akhil.jpeg"
+                    }
+                    alt={`${leader.name} leading Islanders Cricket`}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+
+                {/* Leader Info */}
+                <div className="space-y-6 p-8">
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-wider text-emerald-600">
+                      {leader.title}
+                    </p>
+                    <h2 className="mt-2 text-3xl font-bold text-gray-900">
+                      {leader.name}
+                    </h2>
+                    <p className="mt-2 text-base font-semibold uppercase tracking-wide text-amber-600">
+                      {leader.distinction}
+                    </p>
+                  </div>
+
+                  <p className="text-base leading-relaxed text-gray-700">
+                    {leader.description}
+                  </p>
+
+                  <div className="space-y-3">
+                    <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500">
+                      Key Contributions
+                    </h3>
+                    <ul className="space-y-3">
+                      {leader.spotlight.map((item) => (
+                        <li
+                          key={item}
+                          className="flex items-start gap-3 rounded-lg border border-gray-200 bg-gray-50 p-4 text-sm text-gray-700"
+                        >
+                          <span className="text-emerald-600">✓</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </div>
-            ))}
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Photo Coverage Section */}
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="rounded-2xl border border-gray-200 bg-gradient-to-br from-emerald-50 to-white p-8 shadow-sm">
+            <div className="mb-8">
+              <p className="text-sm font-semibold uppercase tracking-wider text-emerald-600">
+                Coverage Through The Lens
+              </p>
+              <h2 className="mt-2 text-3xl font-bold text-gray-900">
+                Leadership presence across photo narratives
+              </h2>
+            </div>
+            <div className="grid gap-6 md:grid-cols-3">
+              {photoDistribution.map((item) => (
+                <div
+                  key={item.category}
+                  className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-wider text-amber-600">
+                    {item.category}
+                  </p>
+                  <p className="mt-3 text-4xl font-bold text-gray-900">
+                    {item.count}
+                  </p>
+                  <p className="mt-2 text-sm text-gray-600">{item.description}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 text-sm text-gray-600">
+              Islanders leadership blends world-class hospitality, analytics, and
+              mentorship—often alongside international great Elton Chigumbura—to
+              keep the squad performing like a pro franchise.
+            </p>
           </div>
         </div>
       </section>

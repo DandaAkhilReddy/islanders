@@ -115,6 +115,34 @@ export const achievements =
 
 const defaultLeadership = [
   {
+    name: "Dr. Vishnu Reddy",
+    title: "Principal & Chief Mentor",
+    distinction: "Architect of Islanders Culture & Performance Excellence",
+    description:
+      "Principal mentor dedicated to improving all player skills, tactical strategy, and championship mindset. Guides every aspect of team development from technique refinement to mental preparation.",
+    image: "/media/players/vishnu-reddy.jpeg",
+    spotlight: [
+      "Conducts skill development sessions and strategic pitch-walk assessments.",
+      "Leads all training programs focused on batting, bowling, and fielding improvements.",
+      "Connects the squad with international cricket opportunities and elite mentorship.",
+      "Hosts ceremonial events and leads prize distribution ceremonies.",
+    ],
+  },
+  {
+    name: "Dr. Veena Reddy",
+    title: "Co-Sponsor & Operations Support",
+    distinction: "Supporting Dr. Vishnu Reddy in all team operations",
+    description:
+      "Works alongside Dr. Vishnu Reddy to ensure seamless team operations. Manages matchday logistics, player wellbeing, and hospitality to support the principal mentor's vision.",
+    image: "/media/events/hero-san-antonio-team.jpeg",
+    spotlight: [
+      "Supports Dr. Vishnu Reddy with all operational and logistical needs.",
+      "Coordinates matchday nutrition, transport, and player care.",
+      "Maintains sponsor relations and gratitude wall acknowledgments.",
+      "Ensures players focus on skill development and performance.",
+    ],
+  },
+  {
     name: "Akhil Reddy Danda",
     title: "Team Captain",
     distinction: "Red Cap Holder & Multi-time Man of the Match",
@@ -125,32 +153,6 @@ const defaultLeadership = [
       "Engineered comeback wins with decisive bowling changes.",
       "Frontline scorer delivering pivotal batting partnerships.",
       "Presence in every photo spotlight to embody Islanders pride.",
-    ],
-  },
-  {
-    name: "Dr. Vishnu Reddy",
-    title: "Principal Mentor",
-    distinction: "Architect of Islanders Culture & Development Pathways",
-    description:
-      "Guides long-term talent growth, ceremonial engagements, and leadership development across the club.",
-    image: "/media/players/vishnu-reddy.jpeg",
-    spotlight: [
-      "Hosts strategic sessions and pitch-walk assessments.",
-      "Leads prize distribution ceremonies celebrating excellence.",
-      "Connects the squad with international cricket opportunities.",
-    ],
-  },
-  {
-    name: "Dr. Veena Reddy",
-    title: "Operations & Hospitality Lead",
-    distinction: "Matchday logistics and wellbeing architect",
-    description:
-      "Ensures every player is fed, transported, and celebrated. Oversees sponsorship relations, travel, and post-match hospitality.",
-    image: "/media/events/hero-san-antonio-team.jpeg",
-    spotlight: [
-      "Coordinates breakfast, lunch, dinner, and recovery nutrition for every fixture.",
-      "Runs the Islanders gratitude wall featuring all donors and families.",
-      "Keeps transport, accommodation, and medical logistics seamless between leagues.",
     ],
   },
 ];
@@ -165,6 +167,32 @@ const leadershipOverrides: Record<
     spotlight?: string[];
   }
 > = {
+  "Dr. Vishnu Reddy": {
+    title: "Principal & Chief Mentor",
+    distinction: "Architect of Islanders Culture & Performance Excellence",
+    description:
+      "Principal mentor dedicated to improving all player skills, tactical strategy, and championship mindset. Guides every aspect of team development from technique refinement to mental preparation.",
+    image: "/media/players/vishnu-reddy.jpeg",
+    spotlight: [
+      "Conducts skill development sessions and strategic pitch-walk assessments.",
+      "Leads all training programs focused on batting, bowling, and fielding improvements.",
+      "Connects the squad with international cricket opportunities and elite mentorship.",
+      "Hosts ceremonial events and leads prize distribution ceremonies.",
+    ],
+  },
+  "Dr. Veena Reddy": {
+    title: "Co-Sponsor & Operations Support",
+    distinction: "Supporting Dr. Vishnu Reddy in all team operations",
+    description:
+      "Works alongside Dr. Vishnu Reddy to ensure seamless team operations. Manages matchday logistics, player wellbeing, and hospitality to support the principal mentor's vision.",
+    image: "/media/events/hero-san-antonio-team.jpeg",
+    spotlight: [
+      "Supports Dr. Vishnu Reddy with all operational and logistical needs.",
+      "Coordinates matchday nutrition, transport, and player care.",
+      "Maintains sponsor relations and gratitude wall acknowledgments.",
+      "Ensures players focus on skill development and performance.",
+    ],
+  },
   "Akhil Reddy Danda": {
     title: "Team Captain",
     distinction: "Red Cap Holder & Multi-time Man of the Match",
@@ -175,30 +203,6 @@ const leadershipOverrides: Record<
       "Engineered comeback wins with decisive bowling changes.",
       "Frontline scorer delivering pivotal batting partnerships.",
       "Presence in every photo spotlight to embody Islanders pride.",
-    ],
-  },
-  "Dr. Vishnu Reddy": {
-    title: "Principal Mentor",
-    distinction: "Architect of Islanders Culture & Development Pathways",
-    description:
-      "Guides long-term talent growth, ceremonial engagements, and leadership development across the club.",
-    image: "/media/players/vishnu-reddy.jpeg",
-    spotlight: [
-      "Hosts strategic sessions and pitch-walk assessments.",
-      "Leads prize distribution ceremonies celebrating excellence.",
-      "Connects the squad with international cricket opportunities.",
-    ],
-  },
-  "Dr. Veena Reddy": {
-    title: "Operations & Hospitality Lead",
-    distinction: "Matchday logistics and wellbeing architect",
-    description:
-      "Ensures every player is fed, transported, and celebrated. Oversees sponsorship relations, travel, and post-match hospitality.",
-    image: "/media/events/hero-san-antonio-team.jpeg",
-    spotlight: [
-      "Coordinates breakfast, lunch, dinner, and recovery nutrition for every fixture.",
-      "Runs the Islanders gratitude wall featuring all donors and families.",
-      "Keeps transport, accommodation, and medical logistics seamless between leagues.",
     ],
   },
 };
