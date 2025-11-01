@@ -124,6 +124,31 @@ export default function RootLayout({
                 ))}
               </div>
             </div>
+
+            {/* Developer Credits */}
+            <div className="border-t border-white/5 py-6 text-center">
+              <p className="text-sm text-slate-400">
+                Website designed and developed by{" "}
+                <a
+                  href="https://www.linkedin.com/in/akhil-reddy-danda-1a74b214b"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-slate-300 transition hover:text-amber-300"
+                >
+                  Akhil Reddy Danda
+                </a>
+              </p>
+              <p className="mt-2 text-sm text-slate-400">
+                For enquiries:{" "}
+                <a
+                  href="mailto:akhilreddydanda3@gmail.com"
+                  className="font-semibold text-slate-300 transition hover:text-amber-300"
+                >
+                  akhilreddydanda3@gmail.com
+                </a>
+              </p>
+            </div>
+
             <p className="border-t border-white/5 py-4 text-center text-xs text-slate-500">
               © {new Date().getFullYear()} {siteIdentity.name}. All rights reserved.
             </p>
