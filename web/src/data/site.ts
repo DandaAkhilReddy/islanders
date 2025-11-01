@@ -431,20 +431,36 @@ export const matchdaySupport = [
 
 export const sponsorProfiles = [
   {
-    name: "Dr. Vishnu Reddy & Dr. Veena Reddy",
-    title: "Principal Sponsors",
+    name: "Dr. Vishnu Reddy",
+    title: "Principal Sponsor & Chief Mentor",
     contribution:
-      "Dedicated support covering all transport, equipment, nutrition, and operational needs for both Corpus Christi and San Antonio leagues.",
+      "Leading all aspects of team development—from skill improvement sessions to strategic partnerships. Provides complete support for transport, equipment, and nutrition while connecting the squad with international cricket opportunities.",
     focusAreas: [
-      "Complete transport logistics with dedicated SUVs for every fixture.",
-      "Matchday nutrition—breakfast, lunch, dinner, and recovery support.",
-      "Equipment funding—bats, pads, gloves, and match essentials for all players.",
-      "Mentorship and strategic partnerships with hospitals and corporate supporters.",
-      "Ensuring players and their families are celebrated at every milestone.",
+      "Conducts comprehensive skill development and tactical strategy sessions.",
+      "Leads all training programs focused on batting, bowling, and fielding excellence.",
+      "Coordinates complete transport logistics with dedicated SUVs for every fixture.",
+      "Ensures equipment funding—bats, pads, gloves, and match essentials for all players.",
+      "Connects the squad with international mentors and elite cricket networks.",
     ],
     quote:
-      "Islanders cricket is about family - our resources are dedicated to removing every barrier so talent shines.",
+      "Every player deserves the resources to excel. We're committed to removing barriers so talent shines at the highest level.",
     image: "/media/players/vishnu-reddy.jpeg",
+  },
+  {
+    name: "Dr. Veena Reddy",
+    title: "Co-Sponsor & Operations Director",
+    contribution:
+      "Works alongside Dr. Vishnu Reddy to ensure seamless matchday operations and player wellbeing. Manages nutrition programs, hospitality coordination, and family engagement to create a championship environment.",
+    focusAreas: [
+      "Coordinates matchday nutrition—breakfast, lunch, dinner, and recovery support.",
+      "Manages hospitality and ensures players focus on performance excellence.",
+      "Oversees sponsor relations and gratitude wall acknowledgments.",
+      "Ensures players and their families are celebrated at every milestone.",
+      "Supports all operational logistics for Corpus Christi and San Antonio leagues.",
+    ],
+    quote:
+      "Islanders cricket is about family. Creating the right environment off the field allows our players to perform brilliantly on it.",
+    image: "/media/events/hero-san-antonio-team.jpeg",
   },
 ];
 

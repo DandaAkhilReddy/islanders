@@ -78,67 +78,101 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Sponsors Section */}
-      <section className="bg-white py-16">
+      {/* Sponsors Section - Premium Dual Portrait Design */}
+      <section className="sponsor-bg-animated py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold text-gray-900">Our Sponsors</h2>
-            <p className="mt-4 text-lg text-gray-600">
-              Powered by community support and dedication
+          {/* Section Header */}
+          <div className="mb-16 text-center">
+            <p className="text-sm font-semibold uppercase tracking-wider text-emerald-600">
+              Championship Sponsors
+            </p>
+            <h2 className="mt-4 text-4xl font-bold text-gray-900">
+              Powered by Passion & Commitment
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
+              Meet the visionaries investing in Islanders Cricket excellence
             </p>
           </div>
 
+          {/* Dual Portrait Cards */}
           <div className="grid gap-8 lg:grid-cols-2">
-            {sponsorProfiles.map((sponsor) => (
+            {sponsorProfiles.map((sponsor, index) => (
               <div
                 key={sponsor.name}
-                className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md"
+                className={`sponsor-card-3d relative overflow-hidden rounded-2xl bg-white shadow-xl ${
+                  index === 0 ? "sponsor-entrance-left" : "sponsor-entrance-right"
+                }`}
               >
-                <div className="relative h-48 w-full bg-gradient-to-br from-emerald-50 to-amber-50">
+                {/* Shimmer Border Effect (appears on hover) */}
+                <div className="sponsor-border-shimmer" />
+
+                {/* Portrait Section */}
+                <div className="sponsor-portrait-container relative h-80 overflow-hidden bg-gradient-to-br from-gray-100 to-emerald-50">
                   <Image
                     src={sponsor.image}
                     alt={sponsor.name}
                     fill
-                    className="object-contain p-8"
+                    className="sponsor-portrait-hover object-cover"
+                    priority={index === 0}
                   />
+                  {/* Vignette Overlay */}
+                  <div className="sponsor-vignette" />
                 </div>
-                <div className="p-6">
-                  <p className="text-sm font-semibold uppercase tracking-wider text-emerald-600">
-                    {sponsor.title}
-                  </p>
-                  <h3 className="mt-2 text-2xl font-bold text-gray-900">
-                    {sponsor.name}
-                  </h3>
-                  <p className="mt-3 text-base text-gray-700">
-                    {sponsor.contribution}
-                  </p>
 
-                  <ul className="mt-4 space-y-2">
-                    {sponsor.focusAreas.map((focus) => (
-                      <li
-                        key={focus}
-                        className="flex items-start gap-2 text-sm text-gray-600"
-                      >
-                        <span className="text-emerald-600">✓</span>
-                        {focus}
-                      </li>
-                    ))}
-                  </ul>
+                {/* Content Section */}
+                <div className="p-8">
+                  <div className="sponsor-text-cascade space-y-4">
+                    {/* Title Badge */}
+                    <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-100 to-amber-100 px-4 py-2">
+                      <span className="text-lg">✨</span>
+                      <p className="text-xs font-bold uppercase tracking-wider text-emerald-700">
+                        {sponsor.title}
+                      </p>
+                    </div>
 
-                  <blockquote className="mt-4 border-l-4 border-emerald-600 pl-4 italic text-gray-700">
-                    "{sponsor.quote}"
-                  </blockquote>
+                    {/* Name */}
+                    <h3 className="text-3xl font-bold text-gray-900">
+                      {sponsor.name}
+                    </h3>
+
+                    {/* Contribution Description */}
+                    <p className="text-base leading-relaxed text-gray-700">
+                      {sponsor.contribution}
+                    </p>
+
+                    {/* Focus Areas - Compact Grid */}
+                    <div className="mt-6 space-y-2">
+                      {sponsor.focusAreas.slice(0, 3).map((focus, idx) => (
+                        <div
+                          key={focus}
+                          className="sponsor-focus-item flex items-start gap-3 rounded-lg border border-emerald-100 bg-emerald-50/50 px-4 py-3"
+                        >
+                          <span className="mt-0.5 text-emerald-600">✓</span>
+                          <span className="text-sm text-gray-700">{focus}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Quote with Reveal Animation */}
+                    <blockquote className="sponsor-quote mt-6 border-l-4 border-emerald-600 bg-gradient-to-r from-emerald-50 to-transparent pl-5 pr-4 py-4">
+                      <p className="text-base italic leading-relaxed text-gray-800">
+                        "{sponsor.quote}"
+                      </p>
+                    </blockquote>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-10 text-center">
+          {/* CTA Link */}
+          <div className="mt-12 text-center">
             <Link
               href="/sponsors"
-              className="inline-flex items-center text-base font-semibold text-emerald-600 hover:text-emerald-700"
+              className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-emerald-600 to-emerald-700 px-6 py-3 text-base font-semibold text-white shadow-lg transition hover:shadow-xl hover:scale-105"
             >
-              Learn More About Our Sponsors →
+              Explore Full Sponsor Story
+              <span className="text-lg">→</span>
             </Link>
           </div>
         </div>

@@ -277,3 +277,236 @@ h3 {
     animation: none !important;
   }
 }
+
+/* ============================================
+   PREMIUM SPONSOR SECTION ANIMATIONS
+   Motion Design: Dual Portrait Layout
+   ============================================ */
+
+/* Entrance Animations */
+@keyframes sponsor-entrance-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes sponsor-entrance-right {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Border Shimmer Effect */
+@keyframes sponsor-border-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Portrait Glow Pulse */
+@keyframes sponsor-portrait-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.2),
+                0 0 40px rgba(16, 185, 129, 0.1),
+                0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.4),
+                0 0 60px rgba(16, 185, 129, 0.2),
+                0 15px 40px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Text Cascade Reveal */
+@keyframes sponsor-text-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Background Gradient Animation */
+@keyframes sponsor-bg-gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Sponsor Card 3D Container */
+.sponsor-card-3d {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Left Card Entrance */
+.sponsor-entrance-left {
+  animation: sponsor-entrance-left 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Right Card Entrance (with delay) */
+.sponsor-entrance-right {
+  animation: sponsor-entrance-right 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s forwards;
+  opacity: 0;
+}
+
+/* Portrait Container with Hover Effects */
+.sponsor-portrait-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: sponsor-portrait-glow 4s ease-in-out infinite;
+}
+
+/* Portrait Image Hover */
+.sponsor-portrait-hover {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.sponsor-card-3d:hover .sponsor-portrait-hover {
+  transform: scale(1.05);
+}
+
+/* Shimmer Border */
+.sponsor-border-shimmer {
+  position: absolute;
+  inset: -2px;
+  border-radius: 1rem;
+  background: linear-gradient(
+    90deg,
+    #10B981 0%,
+    #F59E0B 25%,
+    #10B981 50%,
+    #F59E0B 75%,
+    #10B981 100%
+  );
+  background-size: 200% 100%;
+  animation: sponsor-border-shimmer 4s linear infinite;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sponsor-card-3d:hover .sponsor-border-shimmer {
+  opacity: 1;
+}
+
+/* Vignette Overlay */
+.sponsor-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    transparent 40%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.sponsor-portrait-container:hover .sponsor-vignette {
+  opacity: 1;
+}
+
+/* Text Cascade Animation */
+.sponsor-text-cascade > * {
+  opacity: 0;
+  animation: sponsor-text-reveal 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.sponsor-text-cascade > *:nth-child(1) { animation-delay: 0.1s; }
+.sponsor-text-cascade > *:nth-child(2) { animation-delay: 0.2s; }
+.sponsor-text-cascade > *:nth-child(3) { animation-delay: 0.3s; }
+.sponsor-text-cascade > *:nth-child(4) { animation-delay: 0.4s; }
+
+/* Focus Areas Cascade */
+.sponsor-focus-item {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sponsor-card-3d:hover .sponsor-focus-item {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.sponsor-card-3d:hover .sponsor-focus-item:nth-child(1) { transition-delay: 0.05s; }
+.sponsor-card-3d:hover .sponsor-focus-item:nth-child(2) { transition-delay: 0.1s; }
+.sponsor-card-3d:hover .sponsor-focus-item:nth-child(3) { transition-delay: 0.15s; }
+.sponsor-card-3d:hover .sponsor-focus-item:nth-child(4) { transition-delay: 0.2s; }
+.sponsor-card-3d:hover .sponsor-focus-item:nth-child(5) { transition-delay: 0.25s; }
+
+/* Animated Background Gradient */
+.sponsor-bg-animated {
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.05) 0%,
+    rgba(245, 158, 11, 0.05) 50%,
+    rgba(16, 185, 129, 0.05) 100%
+  );
+  background-size: 200% 200%;
+  animation: sponsor-bg-gradient 8s ease infinite;
+}
+
+/* 3D Tilt Effect on Hover */
+.sponsor-card-3d:hover {
+  transform: scale(1.02);
+}
+
+/* Quote Reveal */
+.sponsor-quote {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+}
+
+.sponsor-card-3d:hover .sponsor-quote {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  .sponsor-entrance-left,
+  .sponsor-entrance-right,
+  .sponsor-portrait-container,
+  .sponsor-border-shimmer,
+  .sponsor-bg-animated,
+  .sponsor-text-cascade > *,
+  .sponsor-focus-item,
+  .sponsor-quote {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .sponsor-card-3d:hover {
+    transform: none;
+  }
+}
