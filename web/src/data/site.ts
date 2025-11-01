@@ -448,7 +448,7 @@ export const sponsorProfiles = [
   },
   {
     name: "Dr. Veena Reddy",
-    title: "Co-Sponsor & Operations Director",
+    title: "Sponsor",
     contribution:
       "Works alongside Dr. Vishnu Reddy to ensure seamless matchday operations and player wellbeing. Manages nutrition programs, hospitality coordination, and family engagement to create a championship environment.",
     focusAreas: [
