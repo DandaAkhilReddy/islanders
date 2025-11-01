@@ -28,10 +28,18 @@ export default function Home() {
                 island-based cricket team — Islanders by name, Islanders by spirit.
               </p>
 
-              <p className="text-base text-gray-600">
-                Powered by Dr. Vishnu Reddy and Dr. Veena Reddy's dedication to
-                professional cricket excellence.
-              </p>
+              {/* Elegant Sponsor Acknowledgment */}
+              <div className="sponsor-badge-float inline-flex items-center gap-3 rounded-full border-2 border-emerald-200 bg-gradient-to-r from-emerald-50 to-amber-50 px-6 py-3 shadow-sm">
+                <span className="text-2xl">✨</span>
+                <div className="flex flex-col">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-emerald-700">
+                    Championed By
+                  </span>
+                  <span className="text-sm font-bold text-gray-900">
+                    Dr. Vishnu Reddy & Dr. Veena Reddy
+                  </span>
+                </div>
+              </div>
 
               <div className="flex flex-col gap-4 sm:flex-row">
                 <Link
@@ -49,15 +57,22 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Hero Image */}
-            <div className="relative h-[400px] overflow-hidden rounded-2xl shadow-2xl lg:h-[500px]">
+            {/* Hero Image - Premium Multi-layered Effects */}
+            <div className="hero-image-container relative h-[400px] lg:h-[500px]">
+              {/* Main Image with Premium Ken Burns */}
               <Image
                 src="/media/events/hero-san-antonio-team.jpeg"
                 alt="Islanders Cricket Club Team"
                 fill
-                className="object-cover animate-ken-burns"
+                className="hero-image-premium object-cover"
                 priority
               />
+
+              {/* Animated Gradient Overlay */}
+              <div className="hero-gradient-overlay" />
+
+              {/* Shine Sweep Effect */}
+              <div className="hero-shine-effect" />
             </div>
           </div>
         </div>
