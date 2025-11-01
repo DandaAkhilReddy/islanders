@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Geist, Geist_Mono, Oswald } from "next/font/google";
 import "./globals.css";
 import {
@@ -69,8 +70,17 @@ export default function RootLayout({
             <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
               <Link
                 href="/"
-                className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.35em] text-amber-300"
+                className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.35em] text-amber-300"
               >
+                <div className="relative h-10 w-10">
+                  <Image
+                    src="/media/logo.jpeg"
+                    alt="Islanders Cricket Club Logo"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
                 Islanders Cricket
               </Link>
 

@@ -444,7 +444,7 @@ export const sponsorProfiles = [
     ],
     quote:
       "Every player deserves the resources to excel. We're committed to removing barriers so talent shines at the highest level.",
-    image: "/media/players/vishnu-reddy.jpeg",
+    image: "/media/sponsors/veenareddy.jpeg",
   },
   {
     name: "Dr. Veena Reddy",
@@ -460,7 +460,7 @@ export const sponsorProfiles = [
     ],
     quote:
       "Islanders cricket is about family. Creating the right environment off the field allows our players to perform brilliantly on it.",
-    image: "/media/events/hero-san-antonio-team.jpeg",
+    image: "/media/sponsors/veenareddy.jpeg",
   },
 ];
 
