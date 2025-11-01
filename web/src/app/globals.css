@@ -1,16 +1,27 @@
 @import "tailwindcss";
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 @theme inline {
-  --color-brand-midnight: #0a1d3b;
-  --color-brand-electric: #0072ce;
-  --color-brand-orange: #ff7a1c;
-  --color-surface-950: #030817;
-  --color-surface-900: #0f1f35;
-  --color-surface-800: #1b2d45;
+  /* Light & Clean Color Palette */
+  --color-brand-green: #10B981;
+  --color-brand-gold: #F59E0B;
+  --color-brand-dark-green: #059669;
+
+  /* Light Backgrounds */
+  --color-surface-white: #FFFFFF;
+  --color-surface-50: #F9FAFB;
+  --color-surface-100: #F3F4F6;
+  --color-surface-200: #E5E7EB;
+
+  /* Text Colors */
+  --color-text-primary: #111827;
+  --color-text-secondary: #4B5563;
+  --color-text-muted: #6B7280;
+
+  /* Fonts */
   --font-sans: var(--font-geist-sans), "Inter", "Helvetica Neue", Arial, sans-serif;
   --font-mono: var(--font-geist-mono), "Menlo", "SFMono-Regular", Menlo, monospace;
   --font-heading: var(--font-oswald), var(--font-sans);
@@ -18,43 +29,117 @@
 
 body {
   font-family: var(--font-sans);
-  background:
-    radial-gradient(circle at 10% 0%, rgba(0, 114, 206, 0.25), transparent 55%),
-    radial-gradient(circle at 90% 0%, rgba(255, 122, 28, 0.18), transparent 60%),
-    var(--color-surface-950);
-  color: rgb(226 232 240);
+  background: var(--color-surface-white);
+  color: var(--color-text-primary);
   min-height: 100vh;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
   text-decoration: none;
+  color: var(--color-brand-green);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-brand-dark-green);
 }
 
 h1,
 h2,
 h3 {
   font-family: var(--font-heading);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
+  color: var(--color-text-primary);
+  font-weight: 600;
 }
 
-.prose-gradient {
-  background: linear-gradient(
-    135deg,
-    rgba(0, 114, 206, 0.85),
-    rgba(255, 122, 28, 0.85)
-  );
+/* Clean Card Style */
+.card {
+  border: 1px solid var(--color-surface-200);
+  background: var(--color-surface-white);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+/* Light Section Background */
+.section-light {
+  background: var(--color-surface-50);
+  padding: 3rem 1.5rem;
+}
+
+/* Accent Gradient (subtle, for highlights) */
+.accent-gradient {
+  background: linear-gradient(135deg, var(--color-brand-green), var(--color-brand-gold));
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
 }
 
-.glass-panel {
-  border: 1px solid rgba(148, 163, 184, 0.18);
-  background: linear-gradient(
-    135deg,
-    rgba(10, 29, 59, 0.85),
-    rgba(10, 29, 59, 0.65)
-  );
-  box-shadow: 0 24px 48px rgba(2, 8, 23, 0.55);
+/* Button Styles */
+.btn-primary {
+  background: var(--color-brand-green);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: var(--color-brand-dark-green);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(16, 185, 129, 0.3);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--color-brand-green);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: 2px solid var(--color-brand-green);
+}
+
+.btn-secondary:hover {
+  background: var(--color-surface-50);
+}
+
+/* Stats Card */
+.stat-card {
+  background: white;
+  border: 1px solid var(--color-surface-200);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Badge Style */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--color-surface-100);
+  color: var(--color-text-secondary);
+}
+
+.badge-green {
+  background: #D1FAE5;
+  color: #065F46;
+}
+
+.badge-gold {
+  background: #FEF3C7;
+  color: #92400E;
 }

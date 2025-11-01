@@ -1,372 +1,246 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  achievements,
-  matchdaySupport,
-  metrics,
-  siteIdentity,
-  sponsorProfiles,
-} from "@/data/site";
+import { siteIdentity, sponsorProfiles } from "@/data/site";
 import { players } from "@/data/players";
 
-const ccplLeaders = players
-  .filter(
-    (player) =>
-      typeof player.leagues.corpusChristi.runs === "number" &&
-      (player.leagues.corpusChristi.runs ?? 0) > 0
-  )
-  .sort(
-    (a, b) =>
-      (b.leagues.corpusChristi.runs ?? 0) -
-      (a.leagues.corpusChristi.runs ?? 0)
-  )
-  .slice(0, 4);
-
-const sanAntonioLeaders = players
-  .filter(
-    (player) =>
-      typeof player.leagues.sanAntonio?.runs === "number" &&
-      (player.leagues.sanAntonio?.runs ?? 0) > 0
-  )
-  .sort(
-    (a, b) =>
-      (b.leagues.sanAntonio?.runs ?? 0) -
-      (a.leagues.sanAntonio?.runs ?? 0)
-  )
-  .slice(0, 3);
-
 export default function Home() {
+  const topPlayers = players.slice(0, 3); // Show top 3 players on homepage
+
   return (
-    <div className="mx-auto flex max-w-6xl flex-col gap-24 px-6 pb-24 pt-16">
-      <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-slate-950/80">
-        <div className="absolute inset-0">
-          <Image
-            src="/media/events/hero-san-antonio-team.jpeg"
-            alt="Islanders Cricket Club celebrating in downtown San Antonio"
-            fill
-            sizes="100vw"
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-slate-950/75 to-blue-900/70" />
-        </div>
-        <div className="relative grid gap-12 px-8 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:px-16">
-          <div className="space-y-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-amber-300">
-              Islanders Cricket 2025
-            </p>
-            <h1 className="text-balance text-4xl font-semibold leading-tight text-white sm:text-5xl">
-              {siteIdentity.name}
-              <span className="block text-lg text-slate-200 sm:text-xl">
-                {siteIdentity.tagline}
-              </span>
-            </h1>
-            <p className="max-w-xl text-pretty text-base text-slate-200 sm:text-lg">
-              {siteIdentity.mission} With Dr. Vishnu V. Reddy and Dr. Veena
-              Reddy investing over $50,000, the Islanders travel, eat, train,
-              and recover as a professional unit—ready for every CCPL finals
-              push and San Antonio title run.
-            </p>
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/squad"
-                className="inline-flex items-center justify-center rounded-full bg-amber-300 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-amber-200"
-              >
-                Meet the Full Squad
-              </Link>
-              <Link
-                href="/sponsors"
-                className="inline-flex items-center justify-center rounded-full border border-amber-200/40 px-6 py-3 text-sm font-semibold text-amber-200 transition hover:bg-amber-200/10"
-              >
-                Explore Sponsor Impact
-              </Link>
-            </div>
-          </div>
-          <div className="space-y-6 rounded-3xl border border-white/10 bg-slate-950/70 p-8 shadow-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-amber-200">
-              Current Campaign Highlights
-            </p>
-            <ul className="space-y-4 text-sm text-slate-200">
-              {achievements.slice(0, 2).map((achievement) => (
-                <li
-                  key={achievement.league}
-                  className="rounded-2xl border border-white/5 bg-slate-900/80 px-5 py-4"
-                >
-                  <p className="text-xs font-semibold uppercase tracking-[0.35em] text-amber-200">
-                    {achievement.league}
-                  </p>
-                  <p className="mt-1 text-lg font-semibold text-white">
-                    {achievement.status}
-                  </p>
-                  <p className="mt-3 text-sm text-slate-200">
-                    {achievement.narrative}
-                  </p>
-                </li>
-              ))}
-            </ul>
-            <div className="rounded-2xl border border-white/10 bg-gradient-to-r from-blue-600/40 via-slate-900/60 to-amber-400/20 px-6 py-4 text-sm text-slate-100">
-              <p className="font-semibold uppercase tracking-[0.3em] text-amber-200">
-                Logistics Snapshot
-              </p>
-              <p className="mt-2 text-sm text-slate-200">
-                2 dedicated SUVs • hospitality for every match • training
-                blocks with Elton Chigumbura supporting tactical sharpness.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="min-h-screen bg-white">
+      {/* Hero Section - Clean & Simple */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-emerald-50 to-white">
+        <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+            {/* Hero Content */}
+            <div className="flex flex-col justify-center space-y-6">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-wider text-emerald-600">
+                  Islanders Cricket Club 2025
+                </p>
+                <h1 className="mt-4 text-5xl font-bold leading-tight text-gray-900 sm:text-6xl">
+                  {siteIdentity.name}
+                </h1>
+                <p className="mt-4 text-xl text-gray-600">
+                  {siteIdentity.tagline}
+                </p>
+              </div>
 
-      <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {metrics.map((metric) => (
-          <div
-            key={metric.label}
-            className="rounded-3xl border border-white/10 bg-slate-950/70 p-6"
-          >
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-400">
-              {metric.label}
-            </p>
-            <p className="mt-3 text-3xl font-semibold text-white">
-              {metric.value}
-            </p>
-            <p className="mt-3 text-xs text-slate-300">{metric.context}</p>
-          </div>
-        ))}
-      </section>
+              <p className="text-lg leading-relaxed text-gray-700">
+                {siteIdentity.mission} Powered by Dr. Vishnu V. Reddy and Dr. Veena Reddy's
+                $50,000+ investment in professional cricket excellence.
+              </p>
 
-      <section className="space-y-8">
-        <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-amber-200">
-              Corpus Christi Vanguard
-            </p>
-            <h2 className="text-3xl font-semibold text-white">
-              CCPL stats leaders setting the Islanders pace.
-            </h2>
-          </div>
-          <Link
-            href="/squad"
-            className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-400 transition hover:text-amber-300"
-          >
-            View all player profiles →
-          </Link>
-        </div>
-        <div className="grid gap-6 md:grid-cols-2">
-          {ccplLeaders.map((player) => (
-            <article
-              key={player.slug}
-              className="relative overflow-hidden rounded-3xl border border-white/10 bg-slate-950/70 p-6"
-            >
-              {player.image ? (
-                <div className="absolute inset-0 opacity-5">
-                  <Image
-                    src={player.image}
-                    alt={player.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover"
-                  />
-                </div>
-              ) : null}
-              <div className="relative space-y-4">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.35em] text-sky-300">
-                    {player.role}
-                  </p>
-                  <h3 className="text-2xl font-semibold text-white">
-                    {player.name}
-                  </h3>
-                </div>
-                <p className="text-sm text-slate-300">{player.highlight}</p>
-                <dl className="grid gap-3 sm:grid-cols-3">
-                  <div className="rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3">
-                    <dt className="text-[0.6rem] font-semibold uppercase tracking-[0.35em] text-slate-400">
-                      CCPL Runs
-                    </dt>
-                    <dd className="mt-2 text-xl font-semibold text-white">
-                      {player.leagues.corpusChristi.runs}
-                    </dd>
-                  </div>
-                  <div className="rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3">
-                    <dt className="text-[0.6rem] font-semibold uppercase tracking-[0.35em] text-slate-400">
-                      CCPL Wickets
-                    </dt>
-                    <dd className="mt-2 text-xl font-semibold text-white">
-                      {player.leagues.corpusChristi.wickets ?? "—"}
-                    </dd>
-                  </div>
-                  <div className="rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3">
-                    <dt className="text-[0.6rem] font-semibold uppercase tracking-[0.35em] text-slate-400">
-                      Spotlight
-                    </dt>
-                    <dd className="mt-2 text-sm text-amber-200">
-                      {player.spotlight.value}{" "}
-                      <span className="text-[0.7rem] text-slate-300">
-                        {player.spotlight.label}
-                      </span>
-                    </dd>
-                  </div>
-                </dl>
+              <div className="flex flex-col gap-4 sm:flex-row">
                 <Link
-                  href={`/squad#${player.slug}`}
-                  className="inline-flex items-center text-xs font-semibold uppercase tracking-[0.35em] text-amber-200 transition hover:text-amber-100"
+                  href="/squad"
+                  className="inline-flex items-center justify-center rounded-lg bg-emerald-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-emerald-700"
                 >
-                  Profile breakdown →
+                  View Full Squad
+                </Link>
+                <Link
+                  href="/sponsors"
+                  className="inline-flex items-center justify-center rounded-lg border-2 border-emerald-600 px-6 py-3 text-base font-semibold text-emerald-600 transition hover:bg-emerald-50"
+                >
+                  Our Sponsors
                 </Link>
               </div>
-            </article>
-          ))}
+            </div>
+
+            {/* Hero Image */}
+            <div className="relative h-[400px] overflow-hidden rounded-2xl shadow-2xl lg:h-[500px]">
+              <Image
+                src="/media/events/hero-san-antonio-team.jpeg"
+                alt="Islanders Cricket Club Team"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </section>
 
-      {sanAntonioLeaders.length > 0 ? (
-        <section className="space-y-8">
-          <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-blue-300">
-                San Antonio League Fire
-              </p>
-              <h2 className="text-3xl font-semibold text-white">
-                Form that keeps Islanders on top downtown.
-              </h2>
-            </div>
-            <Link
-              href="/gallery#san-antonio"
-              className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-400 transition hover:text-amber-300"
-            >
-              See San Antonio highlights →
-            </Link>
+      {/* Top Players Section */}
+      <section className="bg-gray-50 py-16">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-bold text-gray-900">Top Performers</h2>
+            <p className="mt-4 text-lg text-gray-600">
+              Meet our leading players of the season
+            </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-3">
-            {sanAntonioLeaders.map((player) => (
-              <article
+
+          <div className="grid gap-8 md:grid-cols-3">
+            {topPlayers.map((player) => (
+              <div
                 key={player.slug}
-                className="rounded-3xl border border-white/10 bg-slate-950/70 p-6"
+                className="overflow-hidden rounded-xl bg-white shadow-md transition hover:shadow-xl"
               >
-                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-blue-200">
-                  {player.role}
-                </p>
-                <h3 className="mt-1 text-xl font-semibold text-white">
-                  {player.name}
-                </h3>
-                <p className="mt-3 text-sm text-slate-300">
-                  {player.leagues.sanAntonio?.highlight ??
-                    player.highlight}
-                </p>
-                <dl className="mt-4 grid gap-3">
-                  <div className="rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3">
-                    <dt className="text-[0.6rem] font-semibold uppercase tracking-[0.35em] text-slate-400">
-                      San Antonio Runs
-                    </dt>
-                    <dd className="mt-2 text-xl font-semibold text-white">
-                      {player.leagues.sanAntonio?.runs}
-                    </dd>
+                {player.image && (
+                  <div className="relative h-64 w-full">
+                    <Image
+                      src={player.image}
+                      alt={player.name}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
-                  {typeof player.leagues.sanAntonio?.wickets === "number" ? (
-                    <div className="rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3">
-                      <dt className="text-[0.6rem] font-semibold uppercase tracking-[0.35em] text-slate-400">
-                        San Antonio Wickets
-                      </dt>
-                      <dd className="mt-2 text-xl font-semibold text-white">
-                        {player.leagues.sanAntonio?.wickets}
-                      </dd>
+                )}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900">
+                    {player.name}
+                  </h3>
+                  <p className="mt-1 text-sm font-medium text-emerald-600">
+                    {player.role}
+                  </p>
+                  <p className="mt-3 text-sm text-gray-600">
+                    {player.highlight}
+                  </p>
+
+                  {/* Stats Grid */}
+                  <div className="mt-4 grid grid-cols-2 gap-4">
+                    <div className="rounded-lg bg-gray-50 p-3">
+                      <p className="text-xs font-medium text-gray-500">Runs</p>
+                      <p className="mt-1 text-2xl font-bold text-gray-900">
+                        {player.totalStats.runs}
+                      </p>
                     </div>
-                  ) : null}
-                </dl>
-              </article>
+                    <div className="rounded-lg bg-gray-50 p-3">
+                      <p className="text-xs font-medium text-gray-500">Average</p>
+                      <p className="mt-1 text-2xl font-bold text-gray-900">
+                        {player.totalStats.average.toFixed(2)}
+                      </p>
+                    </div>
+                    {player.totalStats.wickets && (
+                      <>
+                        <div className="rounded-lg bg-gray-50 p-3">
+                          <p className="text-xs font-medium text-gray-500">Wickets</p>
+                          <p className="mt-1 text-2xl font-bold text-gray-900">
+                            {player.totalStats.wickets}
+                          </p>
+                        </div>
+                        <div className="rounded-lg bg-gray-50 p-3">
+                          <p className="text-xs font-medium text-gray-500">Economy</p>
+                          <p className="mt-1 text-2xl font-bold text-gray-900">
+                            {player.totalStats.economy?.toFixed(2)}
+                          </p>
+                        </div>
+                      </>
+                    )}
+                  </div>
+
+                  <Link
+                    href={`/squad#${player.slug}`}
+                    className="mt-4 inline-flex items-center text-sm font-semibold text-emerald-600 hover:text-emerald-700"
+                  >
+                    View Full Stats →
+                  </Link>
+                </div>
+              </div>
             ))}
           </div>
-        </section>
-      ) : null}
 
-      <section className="space-y-8">
-        <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-amber-200">
-              Matchday Infrastructure
-            </p>
-            <h2 className="text-3xl font-semibold text-white">
-              Everything required for peak performance—funded and ready.
-            </h2>
-          </div>
-          <Link
-            href="/sponsors"
-            className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-400 transition hover:text-amber-300"
-          >
-            Sponsor deep dive →
-          </Link>
-        </div>
-        <div className="grid gap-6 lg:grid-cols-3">
-          {matchdaySupport.map((item) => (
-            <article
-              key={item.title}
-              className="rounded-3xl border border-white/10 bg-slate-950/70 p-6"
+          <div className="mt-10 text-center">
+            <Link
+              href="/squad"
+              className="inline-flex items-center text-base font-semibold text-emerald-600 hover:text-emerald-700"
             >
-              <h3 className="text-lg font-semibold text-white">
-                {item.title}
-              </h3>
-              <p className="mt-3 text-sm text-slate-300">
-                {item.description}
-              </p>
-              <ul className="mt-4 space-y-3 text-sm text-slate-300">
-                {item.highlights.map((highlight) => (
-                  <li
-                    key={highlight}
-                    className="rounded-2xl border border-white/5 bg-slate-900/80 px-4 py-3"
-                  >
-                    {highlight}
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
+              View All Players →
+            </Link>
+          </div>
         </div>
       </section>
 
-      <section className="rounded-3xl border border-white/10 bg-slate-950/80 p-8">
-        <div className="grid gap-8 lg:grid-cols-2">
-          {sponsorProfiles.map((sponsor) => (
-            <article
-              key={sponsor.name}
-              className="relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 p-6"
-            >
-              <div className="absolute inset-0 opacity-10">
-                <Image
-                  src={sponsor.image}
-                  alt={sponsor.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="relative space-y-4">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.35em] text-amber-200">
+      {/* Sponsors Section */}
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-bold text-gray-900">Our Sponsors</h2>
+            <p className="mt-4 text-lg text-gray-600">
+              Powered by community support and dedication
+            </p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-2">
+            {sponsorProfiles.map((sponsor) => (
+              <div
+                key={sponsor.name}
+                className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md"
+              >
+                <div className="relative h-48 w-full bg-gradient-to-br from-emerald-50 to-amber-50">
+                  <Image
+                    src={sponsor.image}
+                    alt={sponsor.name}
+                    fill
+                    className="object-contain p-8"
+                  />
+                </div>
+                <div className="p-6">
+                  <p className="text-sm font-semibold uppercase tracking-wider text-emerald-600">
                     {sponsor.title}
                   </p>
-                  <h3 className="text-2xl font-semibold text-white">
+                  <h3 className="mt-2 text-2xl font-bold text-gray-900">
                     {sponsor.name}
                   </h3>
+                  <p className="mt-3 text-base text-gray-700">
+                    {sponsor.contribution}
+                  </p>
+
+                  <ul className="mt-4 space-y-2">
+                    {sponsor.focusAreas.map((focus) => (
+                      <li
+                        key={focus}
+                        className="flex items-start gap-2 text-sm text-gray-600"
+                      >
+                        <span className="text-emerald-600">✓</span>
+                        {focus}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <blockquote className="mt-4 border-l-4 border-emerald-600 pl-4 italic text-gray-700">
+                    "{sponsor.quote}"
+                  </blockquote>
                 </div>
-                <p className="text-sm text-slate-200">
-                  {sponsor.contribution}
-                </p>
-                <ul className="space-y-3 text-sm text-slate-300">
-                  {sponsor.focusAreas.map((focus) => (
-                    <li
-                      key={focus}
-                      className="rounded-2xl border border-white/5 bg-slate-950/60 px-4 py-3"
-                    >
-                      {focus}
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-sm italic text-amber-100">
-                  {sponsor.quote}
-                </p>
               </div>
-            </article>
-          ))}
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              href="/sponsors"
+              className="inline-flex items-center text-base font-semibold text-emerald-600 hover:text-emerald-700"
+            >
+              Learn More About Our Sponsors →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="bg-gradient-to-r from-emerald-600 to-emerald-700 py-16">
+        <div className="mx-auto max-w-7xl px-6 text-center">
+          <h2 className="text-3xl font-bold text-white">
+            Follow Our Journey
+          </h2>
+          <p className="mt-4 text-lg text-emerald-100">
+            Stay updated with match results, player stats, and team news
+          </p>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
+            <Link
+              href="/gallery"
+              className="inline-flex items-center justify-center rounded-lg bg-white px-6 py-3 text-base font-semibold text-emerald-600 shadow-sm transition hover:bg-gray-50"
+            >
+              View Gallery
+            </Link>
+            <Link
+              href="/achievements"
+              className="inline-flex items-center justify-center rounded-lg border-2 border-white px-6 py-3 text-base font-semibold text-white transition hover:bg-emerald-800"
+            >
+              Our Achievements
+            </Link>
+          </div>
         </div>
       </section>
     </div>
