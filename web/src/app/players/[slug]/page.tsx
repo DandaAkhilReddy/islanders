@@ -31,8 +31,6 @@ export default function PlayerPage({ params }: { params: { slug: string } }) {
     notFound();
   }
 
-  const playerRank = players.findIndex((p) => p.slug === params.slug) + 1;
-
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -55,10 +53,6 @@ export default function PlayerPage({ params }: { params: { slug: string } }) {
                     <p className="text-gray-400">Photo Coming Soon</p>
                   </div>
                 )}
-              </div>
-              {/* Rank Badge */}
-              <div className="absolute left-6 top-6 rounded-full bg-emerald-600 px-5 py-3 text-xl font-bold text-white shadow-lg">
-                #{playerRank}
               </div>
             </div>
 
@@ -98,18 +92,6 @@ export default function PlayerPage({ params }: { params: { slug: string } }) {
                     </p>
                   </div>
                 )}
-              </div>
-
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2">
-                {player.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full bg-emerald-100 px-4 py-2 text-sm font-semibold text-emerald-700"
-                  >
-                    {tag}
-                  </span>
-                ))}
               </div>
             </div>
           </div>
@@ -208,59 +190,16 @@ export default function PlayerPage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
-      {/* Spotlight Achievement */}
-      <section className="bg-white py-16">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="rounded-2xl border-4 border-amber-400 bg-gradient-to-br from-amber-50 to-white p-8 shadow-lg">
-            <div className="flex items-start gap-4">
-              <div className="rounded-full bg-amber-400 p-3">
-                <svg
-                  className="h-8 w-8 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-                  />
-                </svg>
-              </div>
-              <div className="flex-1">
-                <p className="text-sm font-bold uppercase tracking-wider text-amber-700">
-                  {player.spotlight.label}
-                </p>
-                <p className="mt-2 text-3xl font-bold text-gray-900">
-                  {player.spotlight.value}
-                </p>
-                {player.spotlight.context && (
-                  <p className="mt-3 text-lg text-gray-700">
-                    {player.spotlight.context}
-                  </p>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Navigation */}
       <section className="bg-gray-50 py-12">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Link
-              href="/top-5"
-              className="inline-flex items-center justify-center rounded-lg border-2 border-emerald-600 px-8 py-3 text-base font-semibold text-emerald-600 transition hover:bg-emerald-50"
-            >
-              ← Back to Top 5
-            </Link>
+          <div className="text-center">
             <Link
               href="/squad"
               className="inline-flex items-center justify-center rounded-lg bg-emerald-600 px-8 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-emerald-700"
             >
-              View Full Squad
+              ← Back to Squad
             </Link>
           </div>
         </div>

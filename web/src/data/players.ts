@@ -1,21 +1,3 @@
-export type LeagueBreakdown = {
-  runs: number | null;
-  matches?: number | null;
-  wickets?: number | null;
-  catches?: number | null;
-  average?: number | null;
-  economy?: number | null;
-  dotBalls?: number | null;
-  highlight?: string;
-  note?: string;
-};
-
-export type PlayerSpotlight = {
-  label: string;
-  value: string;
-  context?: string;
-};
-
 export type PlayerProfile = {
   slug: string;
   name: string;
@@ -25,8 +7,6 @@ export type PlayerProfile = {
   bowlingStyle?: string;
   image?: string;
   highlight: string;
-  spotlight: PlayerSpotlight;
-  tags: string[];
   totalStats: {
     matches: number;
     runs: number;
@@ -38,50 +18,16 @@ export type PlayerProfile = {
   };
 };
 
-// Top 5 Players based on Analytics Data (October 31, 2025)
+// All 14 Players - Islanders Cricket Squad (No Rankings)
 export const players: PlayerProfile[] = [
-  {
-    slug: "akhil-reddy-danda",
-    name: "Akhil Reddy Danda",
-    role: "Captain & MVP All-Rounder",
-    dominantSkill: "All-Rounder",
-    battingStyle: "Right-hand bat",
-    bowlingStyle: "Right-arm medium",
-    image: "/media/players/akhil-reddy-danda.jpeg",
-    highlight:
-      "Triple Crown Champion dominating across batting, bowling, and fielding with exceptional all-round performance.",
-    spotlight: {
-      label: "Team MVP",
-      value: "#1 in All Categories",
-      context: "956 runs, 28 wickets, 13 catches - Complete dominance",
-    },
-    tags: ["MVP", "Captain", "Triple Crown Winner", "All-Rounder"],
-    totalStats: {
-      matches: 21,
-      runs: 956,
-      average: 50.32,
-      wickets: 28,
-      economy: 6.36,
-      catches: 13,
-      dotBalls: 188,
-    },
-  },
   {
     slug: "vishnu-reddy",
     name: "Dr. Vishnu V. Reddy",
-    role: "Mentor & Top-Order Batsman",
-    dominantSkill: "All-Rounder",
+    role: "Principal & Chief Mentor",
+    dominantSkill: "Batter",
     battingStyle: "Right-hand bat",
-    bowlingStyle: "Right-arm medium-fast",
     image: "/media/players/vishnu-reddy.jpeg",
-    highlight:
-      "Consistent top-order batsman and team mentor providing stability with 359 runs across 18 matches.",
-    spotlight: {
-      label: "Rank #2 Batting",
-      value: "359 Runs",
-      context: "Second-highest run contributor at 25.64 average",
-    },
-    tags: ["Mentor", "Top-Order", "Consistency", "Leadership"],
+    highlight: "Team mentor and consistent top-order batsman providing leadership and stability.",
     totalStats: {
       matches: 18,
       runs: 359,
@@ -92,19 +38,12 @@ export const players: PlayerProfile[] = [
   {
     slug: "rajshekhar-reddy",
     name: "Rajshekhar Reddy",
-    role: "Vice Captain & All-Rounder",
+    role: "Director & Mentor",
     dominantSkill: "All-Rounder",
     battingStyle: "Right-hand bat",
     bowlingStyle: "Right-arm medium",
     image: "/media/events/runnerup-presentation.jpeg",
-    highlight:
-      "Reliable vice-captain delivering across all departments with 337 runs and 11 wickets.",
-    spotlight: {
-      label: "Rank #3 Batting",
-      value: "337 Runs",
-      context: "Third-highest scorer with 25.92 average, 11 wickets, 7 catches",
-    },
-    tags: ["Vice Captain", "All-Rounder", "Reliable", "Top 5"],
+    highlight: "Reliable all-rounder delivering across all departments with batting and bowling prowess.",
     totalStats: {
       matches: 17,
       runs: 337,
@@ -116,43 +55,105 @@ export const players: PlayerProfile[] = [
     },
   },
   {
+    slug: "akhil-reddy-danda",
+    name: "Akhil Reddy Danda",
+    role: "Captain",
+    dominantSkill: "All-Rounder",
+    battingStyle: "Right-hand bat",
+    bowlingStyle: "Right-arm medium",
+    image: "/media/players/akhil-reddy-danda.jpeg",
+    highlight: "Team captain dominating across batting, bowling, and fielding with exceptional all-round performance.",
+    totalStats: {
+      matches: 21,
+      runs: 956,
+      average: 50.32,
+      wickets: 28,
+      economy: 6.36,
+      catches: 13,
+      dotBalls: 188,
+    },
+  },
+  {
+    slug: "faizan-mohammad",
+    name: "Faizan Mohammad",
+    role: "Vice Captain",
+    dominantSkill: "All-Rounder",
+    battingStyle: "Right-hand bat",
+    bowlingStyle: "Right-arm medium",
+    image: "/media/players/faizan-mohammad.jpeg",
+    highlight: "Vice captain with strong all-round capabilities in batting and bowling.",
+    totalStats: {
+      matches: 11,
+      runs: 180,
+      average: 20.0,
+      wickets: 10,
+      economy: 6.0,
+      catches: 3,
+      dotBalls: 72,
+    },
+  },
+  {
+    slug: "nitish",
+    name: "Nitish Y",
+    role: "Associate Vice Captain",
+    dominantSkill: "All-Rounder",
+    battingStyle: "Right-hand bat",
+    bowlingStyle: "Right-arm medium",
+    image: "/media/players/nitish.jpeg",
+    highlight: "Associate vice captain providing crucial all-round contributions to the team.",
+    totalStats: {
+      matches: 15,
+      runs: 215,
+      average: 21.5,
+      wickets: 10,
+      economy: 6.47,
+      catches: 4,
+      dotBalls: 85,
+    },
+  },
+  {
     slug: "dinesh-reddy-kandari",
     name: "Dinesh Reddy Kandari",
-    role: "Middle-Order Batsman",
-    dominantSkill: "Batter",
+    role: "Associate Vice Captain & Quality Director",
+    dominantSkill: "All-Rounder",
     battingStyle: "Right-hand bat",
     bowlingStyle: "Right-arm fast-medium",
     image: "/media/players/dinesh-reddy-kandari.jpeg",
-    highlight:
-      "Powerful middle-order contributor with the best average (30.89) among Top 5 batsmen.",
-    spotlight: {
-      label: "Rank #4 Batting",
-      value: "278 Runs",
-      context: "Best average at 30.89 in 14 matches",
-    },
-    tags: ["Middle Order", "Power Hitter", "Top 5", "Consistent"],
+    highlight: "Powerful middle-order contributor and quality director with the best batting average among regulars.",
     totalStats: {
       matches: 14,
       runs: 278,
       average: 30.89,
+      catches: 3,
+    },
+  },
+  {
+    slug: "charan",
+    name: "Charan A",
+    role: "All-Rounder",
+    dominantSkill: "All-Rounder",
+    battingStyle: "Left-hand bat",
+    bowlingStyle: "Left-arm medium",
+    image: "/media/players/charan.jpeg",
+    highlight: "Dynamic left-handed all-rounder with exceptional bowling and fielding skills.",
+    totalStats: {
+      matches: 19,
+      runs: 245,
+      average: 22.27,
+      wickets: 24,
+      economy: 6.43,
+      catches: 12,
+      dotBalls: 165,
     },
   },
   {
     slug: "sampath-reddy",
     name: "Sampath Reddy",
-    role: "Spinner & Lower-Middle Order Batsman",
-    dominantSkill: "All-Rounder",
+    role: "Wicket Keeper Batsman",
+    dominantSkill: "Wicketkeeper",
     battingStyle: "Right-hand bat",
-    bowlingStyle: "Right-arm off-spin",
     image: "/media/players/sampath-reddy.jpeg",
-    highlight:
-      "Versatile all-rounder completing the Top 5 with 254 runs and excellent fielding (5 catches).",
-    spotlight: {
-      label: "Rank #5 Batting",
-      value: "254 Runs",
-      context: "Fifth-highest scorer with 25.40 average, 5 catches",
-    },
-    tags: ["Spin Bowling", "All-Rounder", "Top 5", "Fielding"],
+    highlight: "Reliable wicket-keeper batsman with consistent performances behind the stumps and with the bat.",
     totalStats: {
       matches: 15,
       runs: 254,
@@ -160,22 +161,128 @@ export const players: PlayerProfile[] = [
       catches: 5,
     },
   },
+  {
+    slug: "harshith-sai",
+    name: "Harshith Sai",
+    role: "All-Rounder & Quality Director",
+    dominantSkill: "All-Rounder",
+    battingStyle: "Left-hand bat",
+    bowlingStyle: "Left-arm medium",
+    image: "/media/players/harshith.jpeg",
+    highlight: "Left-handed all-rounder and quality director bringing balance to the team composition.",
+    totalStats: {
+      matches: 12,
+      runs: 145,
+      average: 18.13,
+      wickets: 6,
+      economy: 6.8,
+      catches: 3,
+      dotBalls: 48,
+    },
+  },
+  {
+    slug: "karthikeya",
+    name: "Karthikeya",
+    role: "All-Rounder",
+    dominantSkill: "All-Rounder",
+    battingStyle: "Right-hand bat",
+    bowlingStyle: "Right-arm medium",
+    image: "/media/players/karthikeya.jpeg",
+    highlight: "Versatile all-rounder contributing with bat and ball when called upon.",
+    totalStats: {
+      matches: 10,
+      runs: 125,
+      average: 15.63,
+      wickets: 5,
+      economy: 7.1,
+      catches: 2,
+      dotBalls: 35,
+    },
+  },
+  {
+    slug: "pushkar",
+    name: "Pushkar",
+    role: "All-Rounder",
+    dominantSkill: "All-Rounder",
+    battingStyle: "Right-hand bat",
+    bowlingStyle: "Right-arm medium",
+    image: "/media/players/pushkar.jpeg",
+    highlight: "All-rounder providing depth to the squad with batting and bowling options.",
+    totalStats: {
+      matches: 8,
+      runs: 95,
+      average: 13.57,
+      wickets: 4,
+      economy: 7.3,
+      catches: 2,
+      dotBalls: 28,
+    },
+  },
+  {
+    slug: "farhan",
+    name: "Farhan",
+    role: "All-Rounder",
+    dominantSkill: "All-Rounder",
+    battingStyle: "Right-hand bat",
+    bowlingStyle: "Right-arm medium",
+    image: "/media/players/farhan.jpeg",
+    highlight: "All-rounder adding valuable depth to the team's bowling and batting arsenal.",
+    totalStats: {
+      matches: 9,
+      runs: 108,
+      average: 15.43,
+      wickets: 3,
+      economy: 7.5,
+      catches: 1,
+      dotBalls: 22,
+    },
+  },
+  {
+    slug: "pardha",
+    name: "Pardha",
+    role: "All-Rounder",
+    dominantSkill: "All-Rounder",
+    battingStyle: "Right-hand bat",
+    bowlingStyle: "Right-arm medium",
+    image: "/media/players/pardha.jpeg",
+    highlight: "All-rounder providing crucial support in both batting and bowling departments.",
+    totalStats: {
+      matches: 10,
+      runs: 115,
+      average: 14.38,
+      wickets: 4,
+      economy: 7.2,
+      catches: 2,
+      dotBalls: 30,
+    },
+  },
+  {
+    slug: "shashvat-panchal",
+    name: "Shashvat Panchal",
+    role: "Bowler",
+    dominantSkill: "Bowler",
+    battingStyle: "Right-hand bat",
+    bowlingStyle: "Right-arm fast",
+    image: "/media/players/shashvat.jpeg",
+    highlight: "Specialist bowler with excellent fielding skills, crucial for tight bowling situations.",
+    totalStats: {
+      matches: 10,
+      runs: 45,
+      average: 7.50,
+      wickets: 7,
+      economy: 6.9,
+      catches: 6,
+      dotBalls: 52,
+    },
+  },
 ];
 
-// Top 5 Bowling Leaders (for reference)
-export const bowlingLeaders = [
-  "Akhil Reddy Danda",    // 28 wickets
-  "Charan A",             // 24 wickets
-  "Rajshekhar Reddy",     // 11 wickets
-  "Faizan Mohammad",      // 10 wickets
-  "Nithesh Y",            // 10 wickets
-];
-
-// Top 5 Fielding Leaders (for reference)
-export const fieldingLeaders = [
-  "Akhil Reddy Danda",    // 13 catches
-  "Charan A",             // 12 catches
-  "Rajshekhar Reddy",     // 7 catches
-  "Shashvat Panchal",     // 6 catches
-  "Sampath Reddy",        // 5 catches
-];
+// Leadership Structure
+export const leadership = {
+  principal: "Dr. Vishnu V. Reddy",
+  director: "Rajshekhar Reddy",
+  captain: "Akhil Reddy Danda",
+  viceCaptain: "Faizan Mohammad",
+  associateVC: "Nitish Y",
+  qualityDirectors: ["Harshith Sai", "Dinesh Reddy Kandari"],
+};
