@@ -1,11 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { siteIdentity, sponsorProfiles } from "@/data/site";
-import { players } from "@/data/players";
 
 export default function Home() {
-  const topPlayers = players.slice(0, 3); // Show top 3 players on homepage
-
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section - Clean & Simple */}
@@ -27,8 +24,13 @@ export default function Home() {
               </div>
 
               <p className="text-lg leading-relaxed text-gray-700">
-                {siteIdentity.mission} Powered by Dr. Vishnu V. Reddy and Dr. Veena Reddy's
-                $50,000+ investment in professional cricket excellence.
+                From the shores of Corpus Christi, Texas, we are proud to be the only
+                island-based cricket team — Islanders by name, Islanders by spirit.
+              </p>
+
+              <p className="text-base text-gray-600">
+                Powered by Dr. Vishnu V. Reddy and Dr. Veena Reddy's $50,000+ investment
+                in professional cricket excellence.
               </p>
 
               <div className="flex flex-col gap-4 sm:flex-row">
@@ -36,13 +38,13 @@ export default function Home() {
                   href="/squad"
                   className="inline-flex items-center justify-center rounded-lg bg-emerald-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-emerald-700"
                 >
-                  View Full Squad
+                  View Our Squad
                 </Link>
                 <Link
-                  href="/sponsors"
+                  href="/gallery"
                   className="inline-flex items-center justify-center rounded-lg border-2 border-emerald-600 px-6 py-3 text-base font-semibold text-emerald-600 transition hover:bg-emerald-50"
                 >
-                  Our Sponsors
+                  Photo Gallery
                 </Link>
               </div>
             </div>
@@ -57,97 +59,6 @@ export default function Home() {
                 priority
               />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Top Players Section */}
-      <section className="bg-gray-50 py-16">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold text-gray-900">Top Performers</h2>
-            <p className="mt-4 text-lg text-gray-600">
-              Meet our leading players of the season
-            </p>
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-3">
-            {topPlayers.map((player) => (
-              <div
-                key={player.slug}
-                className="overflow-hidden rounded-xl bg-white shadow-md transition hover:shadow-xl"
-              >
-                {player.image && (
-                  <div className="relative h-64 w-full">
-                    <Image
-                      src={player.image}
-                      alt={player.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                )}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900">
-                    {player.name}
-                  </h3>
-                  <p className="mt-1 text-sm font-medium text-emerald-600">
-                    {player.role}
-                  </p>
-                  <p className="mt-3 text-sm text-gray-600">
-                    {player.highlight}
-                  </p>
-
-                  {/* Stats Grid */}
-                  <div className="mt-4 grid grid-cols-2 gap-4">
-                    <div className="rounded-lg bg-gray-50 p-3">
-                      <p className="text-xs font-medium text-gray-500">Runs</p>
-                      <p className="mt-1 text-2xl font-bold text-gray-900">
-                        {player.totalStats.runs}
-                      </p>
-                    </div>
-                    <div className="rounded-lg bg-gray-50 p-3">
-                      <p className="text-xs font-medium text-gray-500">Average</p>
-                      <p className="mt-1 text-2xl font-bold text-gray-900">
-                        {player.totalStats.average.toFixed(2)}
-                      </p>
-                    </div>
-                    {player.totalStats.wickets && (
-                      <>
-                        <div className="rounded-lg bg-gray-50 p-3">
-                          <p className="text-xs font-medium text-gray-500">Wickets</p>
-                          <p className="mt-1 text-2xl font-bold text-gray-900">
-                            {player.totalStats.wickets}
-                          </p>
-                        </div>
-                        <div className="rounded-lg bg-gray-50 p-3">
-                          <p className="text-xs font-medium text-gray-500">Economy</p>
-                          <p className="mt-1 text-2xl font-bold text-gray-900">
-                            {player.totalStats.economy?.toFixed(2)}
-                          </p>
-                        </div>
-                      </>
-                    )}
-                  </div>
-
-                  <Link
-                    href={`/squad#${player.slug}`}
-                    className="mt-4 inline-flex items-center text-sm font-semibold text-emerald-600 hover:text-emerald-700"
-                  >
-                    View Full Stats →
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-10 text-center">
-            <Link
-              href="/squad"
-              className="inline-flex items-center text-base font-semibold text-emerald-600 hover:text-emerald-700"
-            >
-              View All Players →
-            </Link>
           </div>
         </div>
       </section>
