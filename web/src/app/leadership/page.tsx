@@ -1,11 +1,52 @@
 import Image from "next/image";
-import { leadership, photoDistribution } from "@/data/site";
+import { leadership as playersLeadership } from "@/data/players";
+import { photoDistribution } from "@/data/site";
 
 export const metadata = {
   title: "Islanders Cricket Leadership",
   description:
-    "Meet the Islanders leadership duo guiding strategy, mentorship, and championship aspirations.",
+    "Meet the Islanders leadership guiding strategy, mentorship, and championship aspirations.",
 };
+
+// Define leadership structure in exact order specified
+const leadershipStructure = [
+  {
+    emoji: "🏏",
+    position: "Principal & Chief Mentor",
+    name: playersLeadership.principal,
+    image: "/media/players/vishnu-reddy.jpeg",
+  },
+  {
+    emoji: "🎯",
+    position: "Director & Mentor",
+    name: playersLeadership.director,
+    image: "/media/events/runnerup-presentation.jpeg",
+  },
+  {
+    emoji: "🏆",
+    position: "Captain",
+    name: playersLeadership.captain,
+    image: "/media/players/akhil-reddy-danda.jpeg",
+  },
+  {
+    emoji: "💪",
+    position: "Vice Captain",
+    name: playersLeadership.viceCaptain,
+    image: "/media/players/faizan-mohammad.jpeg",
+  },
+  {
+    emoji: "🤝",
+    position: "Associate Vice Captain",
+    name: playersLeadership.associateVC,
+    image: "/media/players/nithesh-y.jpeg",
+  },
+  {
+    emoji: "⚙️",
+    position: "Quality Directors",
+    name: playersLeadership.qualityDirectors.join(" & "),
+    image: "/media/players/dinesh-reddy-kandari.jpeg",
+  },
+];
 
 export default function LeadershipPage() {
   return (
@@ -18,7 +59,7 @@ export default function LeadershipPage() {
               Leadership Spotlight
             </p>
             <h1 className="mt-4 text-4xl font-bold text-gray-900 sm:text-5xl">
-              Visionaries Steering Islanders Cricket
+              Islanders Cricket Leadership
             </h1>
             <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-700">
               Islanders Cricket thrives on leaders who blend tactical nous with
@@ -30,65 +71,49 @@ export default function LeadershipPage() {
         </div>
       </section>
 
-      {/* Leadership Profiles */}
+      {/* Leadership Structure Grid */}
       <section className="bg-gray-50 py-16">
-        <div className="mx-auto max-w-7xl space-y-12 px-6">
-          {leadership.map((leader) => (
-            <article
-              key={leader.name}
-              className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-lg"
-            >
-              <div className="grid gap-8 lg:grid-cols-[400px_1fr]">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-bold text-gray-900">
+              Leadership Structure
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">
+              Our team leadership hierarchy and roles
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {leadershipStructure.map((leader, index) => (
+              <div
+                key={leader.position}
+                className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-lg"
+              >
                 {/* Leader Image */}
-                <div className="relative h-96 overflow-hidden bg-gradient-to-br from-emerald-50 to-gray-100 lg:h-auto">
+                <div className="relative h-64 overflow-hidden bg-gradient-to-br from-emerald-50 to-gray-100">
                   <Image
-                    src={
-                      leader.image ?? "/media/events/elton-chigumbura-akhil.jpeg"
-                    }
-                    alt={`${leader.name} leading Islanders Cricket`}
+                    src={leader.image}
+                    alt={`${leader.name} - ${leader.position}`}
                     fill
                     className="object-cover"
                   />
                 </div>
 
                 {/* Leader Info */}
-                <div className="space-y-6 p-8">
-                  <div>
-                    <p className="text-sm font-semibold uppercase tracking-wider text-emerald-600">
-                      {leader.title}
-                    </p>
-                    <h2 className="mt-2 text-3xl font-bold text-gray-900">
-                      {leader.name}
-                    </h2>
-                    <p className="mt-2 text-base font-semibold uppercase tracking-wide text-amber-600">
-                      {leader.distinction}
+                <div className="p-6">
+                  <div className="mb-3 flex items-center gap-2">
+                    <span className="text-2xl">{leader.emoji}</span>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
+                      {leader.position}
                     </p>
                   </div>
-
-                  <p className="text-base leading-relaxed text-gray-700">
-                    {leader.description}
-                  </p>
-
-                  <div className="space-y-3">
-                    <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500">
-                      Key Contributions
-                    </h3>
-                    <ul className="space-y-3">
-                      {leader.spotlight.map((item) => (
-                        <li
-                          key={item}
-                          className="flex items-start gap-3 rounded-lg border border-gray-200 bg-gray-50 p-4 text-sm text-gray-700"
-                        >
-                          <span className="text-emerald-600">✓</span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <h3 className="text-xl font-bold text-gray-900">
+                    {leader.name}
+                  </h3>
                 </div>
               </div>
-            </article>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
