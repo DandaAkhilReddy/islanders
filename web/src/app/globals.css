@@ -143,3 +143,17 @@ h3 {
   background: #FEF3C7;
   color: #92400E;
 }
+
+/* Ken Burns Zoom Effect for Hero Image */
+@keyframes ken-burns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.animate-ken-burns {
+  animation: ken-burns 20s ease-in-out infinite alternate;
+}

@@ -22,7 +22,7 @@ export type PlayerProfile = {
 export const players: PlayerProfile[] = [
   {
     slug: "vishnu-reddy",
-    name: "Dr. Vishnu V. Reddy",
+    name: "Dr. Vishnu Reddy",
     role: "Principal & Chief Mentor",
     dominantSkill: "Batter",
     battingStyle: "Right-hand bat",
@@ -279,7 +279,7 @@ export const players: PlayerProfile[] = [
 
 // Leadership Structure
 export const leadership = {
-  principal: "Dr. Vishnu V. Reddy",
+  principal: "Dr. Vishnu Reddy",
   director: "Rajshekhar Reddy",
   captain: "Akhil Reddy Danda",
   viceCaptain: "Faizan Mohammad",

@@ -34,13 +34,13 @@ export default function SponsorsPage() {
         </div>
       </section>
 
-      {/* Principal Sponsor - Dr. Vishnu Reddy Highlighted */}
+      {/* Principal Sponsors - Combined */}
       <section className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-6">
           <div className="rounded-3xl border-2 border-emerald-600 bg-gradient-to-br from-emerald-50 via-white to-amber-50 p-8 shadow-xl">
             <div className="mb-4 text-center">
               <div className="inline-block rounded-full bg-emerald-600 px-4 py-2 text-sm font-bold uppercase tracking-wider text-white shadow-md">
-                Principal Sponsor
+                Principal Sponsors
               </div>
             </div>
             <div className="relative overflow-hidden rounded-2xl">
@@ -81,52 +81,6 @@ export default function SponsorsPage() {
                     "{sponsorProfiles[0].quote}"
                   </blockquote>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Dr. Veena Reddy */}
-      <section className="bg-gray-50 py-16">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
-            <div className="grid gap-8 lg:grid-cols-[300px_1fr]">
-              <div className="relative h-80 bg-gradient-to-br from-amber-50 to-white lg:h-auto">
-                <Image
-                  src={sponsorProfiles[1].image}
-                  alt={sponsorProfiles[1].name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 300px"
-                  className="object-contain p-6"
-                />
-              </div>
-              <div className="space-y-6 p-8">
-                <div>
-                  <p className="text-sm font-semibold uppercase tracking-wider text-amber-600">
-                    {sponsorProfiles[1].title}
-                  </p>
-                  <h2 className="mt-2 text-3xl font-bold text-gray-900">
-                    {sponsorProfiles[1].name}
-                  </h2>
-                </div>
-                <p className="text-lg text-gray-700">
-                  {sponsorProfiles[1].contribution}
-                </p>
-                <div className="space-y-3">
-                  {sponsorProfiles[1].focusAreas.map((focus) => (
-                    <div
-                      key={focus}
-                      className="flex items-start gap-3 rounded-lg border border-amber-200 bg-amber-50 p-4"
-                    >
-                      <span className="text-amber-600">✓</span>
-                      <span className="text-base text-gray-700">{focus}</span>
-                    </div>
-                  ))}
-                </div>
-                <blockquote className="border-l-4 border-amber-600 bg-amber-50 p-4 italic text-gray-800">
-                  "{sponsorProfiles[1].quote}"
-                </blockquote>
               </div>
             </div>
           </div>
@@ -188,10 +142,9 @@ export default function SponsorsPage() {
                   </h2>
                 </div>
                 <p className="text-base text-gray-700">
-                  Veena akka and Niharika akka maintain a full sponsor wall that
-                  travels to Corpus Christi and San Antonio venues. Every donor,
-                  family member, and supporter is acknowledged before the first ball
-                  is bowled.
+                  Our team maintains a full sponsor wall that travels to Corpus Christi
+                  and San Antonio venues. Every donor, family member, and supporter is
+                  acknowledged before the first ball is bowled.
                 </p>
                 <ul className="space-y-3 text-base text-gray-700">
                   <li className="flex items-start gap-2">

@@ -29,8 +29,8 @@ export default function Home() {
               </p>
 
               <p className="text-base text-gray-600">
-                Powered by Dr. Vishnu V. Reddy and Dr. Veena Reddy's $50,000+ investment
-                in professional cricket excellence.
+                Powered by Dr. Vishnu Reddy and Dr. Veena Reddy's dedication to
+                professional cricket excellence.
               </p>
 
               <div className="flex flex-col gap-4 sm:flex-row">
@@ -55,7 +55,7 @@ export default function Home() {
                 src="/media/events/hero-san-antonio-team.jpeg"
                 alt="Islanders Cricket Club Team"
                 fill
-                className="object-cover"
+                className="object-cover animate-ken-burns"
                 priority
               />
             </div>

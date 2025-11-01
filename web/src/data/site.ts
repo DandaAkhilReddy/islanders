@@ -369,11 +369,6 @@ export const analyticsLayers = [
 
 export const metrics = [
   {
-    label: "Community Investment",
-    value: "$50K+",
-    context: "Backed by Dr. Vishnu V. Reddy & Dr. Veena Reddy.",
-  },
-  {
     label: "Transport Fleet",
     value: "2 SUVs",
     context: "Fuel, tolls, parking, and drivers covered for every squad outing.",
@@ -432,32 +427,20 @@ export const matchdaySupport = [
 
 export const sponsorProfiles = [
   {
-    name: "Dr. Vishnu V. Reddy",
-    title: "Chief Patron & Mentor",
+    name: "Dr. Vishnu Reddy & Dr. Veena Reddy",
+    title: "Principal Sponsors",
     contribution:
-      "Financed the primary $50,000+ Islanders investment covering transport, equipment, and analytics expansion.",
+      "Dedicated support covering all transport, equipment, nutrition, and operational needs for both Corpus Christi and San Antonio leagues.",
     focusAreas: [
-      "Mentorship for players and coaching staff.",
-      "Strategic partnerships with hospitals and corporate supporters.",
-      "Ensuring players' families are included in every celebration.",
+      "Complete transport logistics with dedicated SUVs for every fixture.",
+      "Matchday nutrition—breakfast, lunch, dinner, and recovery support.",
+      "Equipment funding—bats, pads, gloves, and match essentials for all players.",
+      "Mentorship and strategic partnerships with hospitals and corporate supporters.",
+      "Ensuring players and their families are celebrated at every milestone.",
     ],
     quote:
-      "“Islanders cricket is about family—our resources are dedicated to removing every barrier so talent shines.”",
+      "Islanders cricket is about family - our resources are dedicated to removing every barrier so talent shines.",
     image: "/media/players/vishnu-reddy.jpeg",
-  },
-  {
-    name: "Dr. Veena Reddy",
-    title: "Operations & Hospitality Lead",
-    contribution:
-      "Coordinates nutrition, transport logistics, and well-being budgets for both leagues.",
-    focusAreas: [
-      "Matchday hospitality—breakfast, lunch, dinner, protein shakes, and hydration.",
-      "Travel itineraries, fuel coverage, and accommodation where required.",
-      "Community outreach with Veena akka & Niharika akka leading charitable drives.",
-    ],
-    quote:
-      "“From dawn departures to late-night celebrations, every detail is cared for so the boys play with freedom.”",
-    image: "/media/events/hero-san-antonio-team.jpeg",
   },
 ];
 
