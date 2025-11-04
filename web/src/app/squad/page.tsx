@@ -8,6 +8,19 @@ export const metadata = {
     "Meet the complete Islanders Cricket Club squad with detailed statistics and performance highlights from the 2025 season.",
 };
 
+// Object position mapping for optimal face centering in squad images
+// Optimized for both mobile and desktop viewports
+const playerImagePositions: Record<string, { mobile: string; desktop: string }> = {
+  "vishnu-reddy": { mobile: "center 40%", desktop: "center 35%" },
+  "akhil-reddy-danda": { mobile: "center 15%", desktop: "center 20%" },
+  "faizan-mohammad": { mobile: "center 20%", desktop: "center 25%" },
+  "charan": { mobile: "center 15%", desktop: "center 20%" },
+  "sampath-reddy": { mobile: "center 20%", desktop: "center center" },
+  "dinesh-reddy-kandari": { mobile: "center 25%", desktop: "center 30%" },
+  "pardha": { mobile: "center 20%", desktop: "center center" },
+  "nitish": { mobile: "center 20%", desktop: "center 25%" },
+};
+
 export default function SquadPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -108,14 +121,30 @@ export default function SquadPage() {
                 className="group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-lg"
               >
                 {/* Player Image */}
-                <div className="relative h-64 w-full overflow-hidden bg-gradient-to-br from-emerald-50 to-gray-100">
+                <div className="relative h-72 sm:h-64 w-full overflow-hidden bg-gradient-to-br from-emerald-50 to-gray-100">
                   {player.image ? (
-                    <Image
-                      src={player.image}
-                      alt={player.name}
-                      fill
-                      className="object-cover transition group-hover:scale-105"
-                    />
+                    <>
+                      {/* Mobile Image - optimized focal point */}
+                      <Image
+                        src={player.image}
+                        alt={player.name}
+                        fill
+                        className="object-cover transition group-hover:scale-105 sm:hidden"
+                        style={{
+                          objectPosition: playerImagePositions[player.slug]?.mobile || "center 20%",
+                        }}
+                      />
+                      {/* Desktop Image - optimized focal point */}
+                      <Image
+                        src={player.image}
+                        alt={player.name}
+                        fill
+                        className="hidden object-cover transition group-hover:scale-105 sm:block"
+                        style={{
+                          objectPosition: playerImagePositions[player.slug]?.desktop || "center center",
+                        }}
+                      />
+                    </>
                   ) : (
                     <div className="flex h-full items-center justify-center">
                       <p className="text-gray-400">Photo Coming Soon</p>

@@ -99,7 +99,7 @@ export const players: PlayerProfile[] = [
     dominantSkill: "All-Rounder",
     battingStyle: "Right-hand bat",
     bowlingStyle: "Right-arm medium",
-    image: "/media/players/nitish.jpeg",
+    image: "/media/players/nithesh-y.jpeg",
     highlight: "Associate vice captain providing crucial all-round contributions to the team.",
     totalStats: {
       matches: 15,
@@ -134,7 +134,7 @@ export const players: PlayerProfile[] = [
     dominantSkill: "All-Rounder",
     battingStyle: "Left-hand bat",
     bowlingStyle: "Left-arm medium",
-    image: "/media/players/charan.jpeg",
+    image: "/media/players/charan-reddy.jpeg",
     highlight: "Dynamic left-handed all-rounder with exceptional bowling and fielding skills.",
     totalStats: {
       matches: 19,
@@ -244,7 +244,7 @@ export const players: PlayerProfile[] = [
     dominantSkill: "All-Rounder",
     battingStyle: "Right-hand bat",
     bowlingStyle: "Right-arm medium",
-    image: "/media/players/pardha.jpeg",
+    image: "/media/players/pardha-sravdhi.jpeg",
     highlight: "All-rounder providing crucial support in both batting and bowling departments.",
     totalStats: {
       matches: 10,

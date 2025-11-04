@@ -43,23 +43,23 @@ export default function MobileMenu() {
       {/* Hamburger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden relative z-50 flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 backdrop-blur transition hover:bg-white/20"
+        className="md:hidden relative z-[60] flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100 backdrop-blur transition hover:bg-emerald-200"
         aria-label="Toggle menu"
         aria-expanded={isOpen}
       >
         <div className="flex flex-col gap-1.5">
           <span
-            className={`block h-0.5 w-5 bg-white transition-all duration-300 ${
+            className={`block h-0.5 w-5 bg-emerald-600 transition-all duration-300 ${
               isOpen ? "translate-y-2 rotate-45" : ""
             }`}
           />
           <span
-            className={`block h-0.5 w-5 bg-white transition-all duration-300 ${
+            className={`block h-0.5 w-5 bg-emerald-600 transition-all duration-300 ${
               isOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`block h-0.5 w-5 bg-white transition-all duration-300 ${
+            className={`block h-0.5 w-5 bg-emerald-600 transition-all duration-300 ${
               isOpen ? "-translate-y-2 -rotate-45" : ""
             }`}
           />
@@ -69,7 +69,7 @@ export default function MobileMenu() {
       {/* Backdrop Overlay */}
       {isOpen && (
         <div
-          className="mobile-menu-backdrop fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
+          className="mobile-menu-backdrop fixed inset-0 z-50 bg-black/60 backdrop-blur-sm md:hidden"
           onClick={closeMenu}
           aria-hidden="true"
         />
@@ -77,7 +77,7 @@ export default function MobileMenu() {
 
       {/* Slide-in Menu Panel */}
       <div
-        className={`mobile-menu-panel fixed right-0 top-0 z-50 h-full w-80 max-w-[85vw] transform bg-white shadow-2xl transition-transform duration-300 ease-out md:hidden ${
+        className={`mobile-menu-panel fixed right-0 top-0 z-[60] h-full w-80 max-w-[85vw] transform bg-white shadow-2xl transition-transform duration-300 ease-out md:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

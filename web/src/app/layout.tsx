@@ -63,14 +63,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} bg-slate-950 text-slate-100 antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} bg-white text-gray-900 antialiased`}
       >
-        <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
-          <header className="sticky top-0 z-50 border-b border-white/10 backdrop-blur bg-slate-950/80">
+        <div className="min-h-screen bg-white">
+          <header className="sticky top-0 z-40 border-b border-gray-200 bg-white/95 backdrop-blur shadow-sm">
             <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
               <Link
                 href="/"
-                className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.35em] text-amber-300"
+                className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.35em] text-emerald-600 hover:text-emerald-700 transition"
               >
                 <div className="relative h-10 w-10">
                   <Image
@@ -90,7 +90,7 @@ export default function RootLayout({
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="font-medium text-slate-200 transition hover:text-amber-300"
+                    className="font-medium text-gray-700 transition hover:text-emerald-600"
                   >
                     {item.label}
                   </Link>
@@ -101,7 +101,7 @@ export default function RootLayout({
               <div className="hidden md:block">
                 <Link
                   href={siteIdentity.cta.href}
-                  className="rounded-full border border-amber-400/60 bg-amber-300/10 px-4 py-2 text-sm font-semibold text-amber-200 transition hover:bg-amber-300/20"
+                  className="rounded-full border-2 border-emerald-600 bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-600 transition hover:bg-emerald-600 hover:text-white"
                 >
                   {siteIdentity.cta.label}
                 </Link>
@@ -112,22 +112,22 @@ export default function RootLayout({
             </nav>
           </header>
           <main>{children}</main>
-          <footer className="border-t border-white/10 bg-slate-950/80">
+          <footer className="border-t border-gray-200 bg-gray-50">
             <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-12 md:flex-row md:items-end md:justify-between">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-400">
+                <p className="text-xs font-semibold uppercase tracking-[0.4em] text-emerald-600">
                   {siteFooter.ethos}
                 </p>
-                <p className="mt-3 max-w-xl text-sm text-slate-300">
+                <p className="mt-3 max-w-xl text-sm text-gray-700">
                   {siteFooter.copy}
                 </p>
               </div>
-              <div className="grid grid-cols-1 gap-2 text-sm text-slate-300 md:text-right">
+              <div className="grid grid-cols-1 gap-2 text-sm text-gray-700 md:text-right">
                 {siteFooter.links.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="transition hover:text-amber-300"
+                    className="transition hover:text-emerald-600"
                   >
                     {link.label}
                   </Link>
@@ -136,30 +136,30 @@ export default function RootLayout({
             </div>
 
             {/* Developer Credits */}
-            <div className="border-t border-white/5 py-6 text-center">
-              <p className="text-sm text-slate-400">
+            <div className="border-t border-gray-200 bg-white py-6 text-center">
+              <p className="text-sm text-gray-600">
                 Website designed and developed by{" "}
                 <a
                   href="https://www.linkedin.com/in/akhil-reddy-danda-1a74b214b"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-semibold text-slate-300 transition hover:text-amber-300"
+                  className="font-semibold text-emerald-600 transition hover:text-emerald-700"
                 >
                   Akhil Reddy Danda
                 </a>
               </p>
-              <p className="mt-2 text-sm text-slate-400">
+              <p className="mt-2 text-sm text-gray-600">
                 For enquiries:{" "}
                 <a
                   href="mailto:akhilreddydanda3@gmail.com"
-                  className="font-semibold text-slate-300 transition hover:text-amber-300"
+                  className="font-semibold text-emerald-600 transition hover:text-emerald-700"
                 >
                   akhilreddydanda3@gmail.com
                 </a>
               </p>
             </div>
 
-            <p className="border-t border-white/5 py-4 text-center text-xs text-slate-500">
+            <p className="border-t border-gray-200 py-4 text-center text-xs text-gray-500">
               © {new Date().getFullYear()} {siteIdentity.name}. All rights reserved.
             </p>
           </footer>
